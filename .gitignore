@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+
+# macOS artifacts
+.DS_Store
+
+# Environment / secrets — never commit these
+.env
+.env.*

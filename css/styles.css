@@ -1,0 +1,1464 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   styles.css
+   Dr. Alfredo Elías Alfaro Ramos — Personal Campaign Website
+   Design system: custom properties, base resets, typography.
+   Component-specific styles are added in subsequent sub-tasks.
+═══════════════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────────────
+   §3.1 Color Tokens
+──────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Brand palette */
+  --color-primary:        #003DA5; /* Primary blue — navbar, headings, buttons */
+  --color-primary-light:  #1A56DB; /* Hover states, active nav link            */
+  --color-accent:         #0EA5E9; /* Section dividers, icons, highlights       */
+
+  /* Backgrounds */
+  --color-bg:             #FFFFFF; /* Default section background                */
+  --color-bg-alt:         #F0F6FF; /* Alternating section background            */
+
+  /* Borders */
+  --color-border:         #e5e7eb; /* Subtle dividers, accordion borders        */
+
+  /* Text */
+  --color-text:           #1E293B; /* Body text                                 */
+  --color-text-muted:     #64748B; /* Captions, labels                          */
+  --color-white:          #FFFFFF; /* Text on dark / blue backgrounds           */
+
+  /* Footer */
+  --color-footer-bg:      #001D6C; /* Dark navy footer background               */
+}
+
+/* ───────────────────────────────────────────────────────────────────────
+   §3.2 Typography Scale
+   Fonts loaded via Google Fonts in <head>:
+     Inter       — body, labels/captions
+     Merriweather — headings
+──────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Font families */
+  --font-heading: 'Merriweather', Georgia, serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Type scale */
+  --text-h1:      3rem;      /* Page heading  (h1) */
+  --text-h2:      2.25rem;   /* Section heading (h2) */
+  --text-h3:      1.5rem;    /* Sub-heading (h3) */
+  --text-body:    1rem;      /* Body text — 16 px */
+  --text-caption: 0.875rem;  /* Labels / captions */
+
+  /* Font weights */
+  --weight-regular:   400;
+  --weight-medium:    500;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+
+  /* Line heights */
+  --leading-tight:  1.25;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+}
+
+/* ───────────────────────────────────────────────────────────────────────
+   Base Resets
+──────────────────────────────────────────────────────────────────────── */
+
+/* Use border-box sizing everywhere */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling for same-page anchor navigation */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; /* 1rem base */
+}
+
+body {
+  font-family:    var(--font-body);
+  font-size:      var(--text-body);
+  font-weight:    var(--weight-regular);
+  line-height:    var(--leading-normal);
+  color:          var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: var(--leading-tight);
+  color:       var(--color-primary);
+}
+
+h1 { font-size: var(--text-h1);  font-weight: var(--weight-bold); }
+h2 { font-size: var(--text-h2);  font-weight: var(--weight-bold); }
+h3 { font-size: var(--text-h3);  font-weight: var(--weight-semibold); }
+
+/* Links */
+a {
+  color: var(--color-primary-light);
+  text-decoration: none;
+}
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove list decoration from nav lists */
+ul, ol {
+  list-style: none;
+}
+
+/* Focus outline — ensure keyboard accessibility */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ───────────────────────────────────────────────────────────────────────
+   Component styles added in subsequent sub-tasks:
+     Sub-Task 3  — Hero section
+     Sub-Task 4  — About Me section
+     Sub-Task 5  — Achievements carousel
+     Sub-Task 6  — Research, Teaching, Community
+     Sub-Task 7  — Publications accordion, Awards carousel
+     Sub-Task 8  — Contact form, Footer
+     Sub-Task 9  — Scroll-reveal animations (@keyframes fadeInUp)
+──────────────────────────────────────────────────────────────────────── */
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Sub-Task 2 — Navbar
+═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Navbar container ────────────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-bg);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.10);
+  z-index: 50;
+}
+
+/* ── Inner row: logo + links + hamburger ─────────────────────────────── */
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 64px;
+}
+
+/* ── Logo / name mark ────────────────────────────────────────────────── */
+.navbar__logo {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  font-size: 1.125rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.navbar__logo:hover,
+.navbar__logo:focus-visible {
+  color: var(--color-primary-light);
+  text-decoration: none;
+}
+
+/* ── Desktop nav links ───────────────────────────────────────────────── */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* ── Nav link base ───────────────────────────────────────────────────── */
+.nav-link {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);   /* 0.875 rem */
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+  padding: 0.375rem 0.6rem;
+  border-radius: 4px;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0.6rem;
+  right: 0.6rem;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--color-primary-light);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+  transform-origin: left;
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--color-primary-light);
+  text-decoration: none;
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ── Active nav link (set by scroll-spy) ────────────────────────────── */
+.nav-link.active {
+  color: var(--color-primary-light);
+}
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* ── Hamburger button ────────────────────────────────────────────────── */
+.navbar__hamburger {
+  display: none;          /* hidden on desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  line-height: 1;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+.navbar__hamburger:hover,
+.navbar__hamburger:focus-visible {
+  color: var(--color-primary-light);
+}
+
+/* ── Mobile slide-down drawer ────────────────────────────────────────── */
+.nav-drawer {
+  display: none;            /* collapsed by default */
+  overflow: hidden;
+  background-color: var(--color-bg);
+  border-top: 1px solid #e5e7eb;
+  /* transition applied via max-height trick when .open is toggled by JS */
+}
+.nav-drawer.open {
+  display: block;
+}
+.nav-drawer ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1.5rem 1rem;
+  gap: 0.25rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Sub-Task 3 — Hero Section (#inicio)
+═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Section wrapper ─────────────────────────────────────────────────── */
+.hero {
+  height: 100vh;
+  position: relative;
+  /* push content below fixed 64px navbar */
+  padding-top: 64px;
+}
+
+/* ── Swiper fills the full hero height ───────────────────────────────── */
+.hero .swiper,
+.hero .swiper-slide {
+  height: 100%;
+}
+
+/* ── Per-slide placeholder background colors ─────────────────────────── */
+.hero__slide--1 { background-color: #003DA5; }
+.hero__slide--2 { background-color: #1A3A6B; }
+.hero__slide--3 { background-color: #0A2744; }
+
+/* ── Dark-blue gradient overlay ──────────────────────────────────────── */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 61, 165, 0.85) 0%,
+    rgba(0, 29, 108, 0.75) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Content block — centered vertically, left-aligned ──────────────── */
+.hero__content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: clamp(1.5rem, 8vw, 7rem);
+  max-width: 800px;
+  color: var(--color-white);
+  text-align: left;
+  z-index: 1;
+}
+
+/* ── Subtitle ─────────────────────────────────────────────────────────── */
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-semibold);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Candidate name h1 ────────────────────────────────────────────────── */
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);      /* 3rem */
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+  line-height: var(--leading-tight);
+  margin-bottom: 1rem;
+}
+
+/* ── Tagline ──────────────────────────────────────────────────────────── */
+.hero__tagline {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: var(--weight-regular);
+  color: rgba(255, 255, 255, 0.80);
+  max-width: 600px;
+  margin-bottom: 2rem;
+  line-height: var(--leading-relaxed);
+}
+
+/* ── CTA button ───────────────────────────────────────────────────────── */
+.hero__cta {
+  display: inline-block;
+  background-color: var(--color-primary-light);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.hero__cta:hover,
+.hero__cta:focus-visible {
+  background-color: var(--color-primary);
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+/* ── Swiper pagination dots ───────────────────────────────────────────── */
+.hero .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.55);
+  opacity: 1;
+}
+.hero .swiper-pagination-bullet-active {
+  background-color: var(--color-accent);
+}
+
+/* ── Swiper nav arrows ────────────────────────────────────────────────── */
+.hero .swiper-button-prev,
+.hero .swiper-button-next {
+  color: var(--color-white);
+}
+.hero .swiper-button-prev:hover,
+.hero .swiper-button-next:hover {
+  color: var(--color-accent);
+}
+
+/* ── Responsive: smaller heading on mobile ──────────────────────────── */
+@media (max-width: 767px) {
+  .hero__title {
+    font-size: 1.875rem;
+  }
+  .hero__tagline {
+    font-size: 1rem;
+  }
+}
+.nav-drawer .nav-link {
+  display: block;
+  padding: 0.625rem 0.5rem;
+  font-size: var(--text-body);
+  border-bottom: 1px solid #f0f0f0;
+}
+.nav-drawer .nav-link:last-child {
+  border-bottom: none;
+}
+
+/* ── Responsive breakpoint: hide desktop links, show hamburger ───────── */
+@media (max-width: 767px) {
+  .navbar__links {
+    display: none;
+  }
+  .navbar__hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Sub-Task 4 — About Me Section (#sobre-mi)
+═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Section wrapper ─────────────────────────────────────────────────── */
+.about {
+  background-color: var(--color-bg);
+  padding: 80px 0;
+}
+
+/* ── Centered content container ─────────────────────────────────────── */
+.about__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Section header block ────────────────────────────────────────────── */
+.about__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* ── Small caps label above h2 ───────────────────────────────────────── */
+.about__label {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);   /* 0.875 rem */
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+/* ── Two-column grid ─────────────────────────────────────────────────── */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ── Photo column wrapper ────────────────────────────────────────────── */
+.about__photo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ── Circular photo placeholder ──────────────────────────────────────── */
+.about__photo-placeholder {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background-color: var(--color-bg-alt);
+  border: 4px solid var(--color-primary);
+  box-shadow: 0 6px 24px rgba(0, 61, 165, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about__photo-placeholder .fa-user {
+  font-size: 7rem;
+  color: var(--color-primary);
+  opacity: 0.35;
+}
+
+/* ── Real photo (when <img> replaces placeholder) ────────────────────── */
+.about__photo-img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 4px solid var(--color-primary);
+  box-shadow: 0 6px 24px rgba(0, 61, 165, 0.15);
+  object-fit: cover;
+}
+
+/* ── Bio column ──────────────────────────────────────────────────────── */
+.about__bio-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ── Name h3 ─────────────────────────────────────────────────────────── */
+.about__name {
+  margin-bottom: 0;
+}
+
+/* ── Role / title line ───────────────────────────────────────────────── */
+.about__title-role {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+}
+
+/* ── Institution badge pill ──────────────────────────────────────────── */
+.about__institution {
+  display: inline-block;
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 61, 165, 0.20);
+  width: fit-content;
+}
+
+/* ── Biography paragraph ─────────────────────────────────────────────── */
+.about__bio {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: 1.7;
+  margin-top: 0.5rem;
+}
+
+/* ── Stat counters row ───────────────────────────────────────────────── */
+.about__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* ── Individual counter ──────────────────────────────────────────────── */
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 80px;
+}
+
+/* ── Counter number ──────────────────────────────────────────────────── */
+.stat-number {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--color-primary);
+}
+
+/* ── Counter label ───────────────────────────────────────────────────── */
+.stat-label {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);  /* 0.875 rem */
+  font-weight: var(--weight-medium);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ── Responsive: stack columns on mobile ─────────────────────────────── */
+@media (max-width: 767px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+  .about__photo-wrapper {
+    justify-content: center;
+  }
+  .about__stats {
+    justify-content: center;
+  }
+  .about__header {
+    text-align: left;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   §5.4  Achievements Section (#logros)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Section wrapper ─────────────────────────────────────────────────── */
+.achievements {
+  background-color: var(--color-bg-alt);
+  padding: 80px 0;
+}
+
+/* ── Shared section primitives ───────────────────────────────────────── */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  max-width: 680px;
+  margin: 0 auto;
+  font-family: var(--font-body);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ── Section header ──────────────────────────────────────────────────── */
+.achievements__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* ── Swiper wrapper: extra side padding for nav arrows ───────────────── */
+.achievements__swiper {
+  padding: 0 48px 16px;
+}
+
+/* ── Individual achievement card ─────────────────────────────────────── */
+.achievement-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  border-top: 4px solid var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+  box-sizing: border-box;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.achievement-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 61, 165, 0.12);
+  transform: translateY(-3px);
+}
+
+/* ── Icon circle ─────────────────────────────────────────────────────── */
+.achievement-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.achievement-card__icon i {
+  color: #ffffff;
+  font-size: 1.25rem;
+}
+
+/* ── Year badge ──────────────────────────────────────────────────────── */
+.achievement-card__year {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);   /* 0.875rem */
+  font-weight: var(--weight-semibold);
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Card title ──────────────────────────────────────────────────────── */
+.achievement-card__title {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-semibold);
+  font-size: 1.1rem;
+  color: var(--color-text);
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* ── Card description ────────────────────────────────────────────────── */
+.achievement-card__desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Swiper navigation arrows ────────────────────────────────────────── */
+#logros-swiper .swiper-button-prev,
+#logros-swiper .swiper-button-next {
+  color: var(--color-primary);
+  width: 36px;
+  height: 36px;
+}
+
+#logros-swiper .swiper-button-prev::after,
+#logros-swiper .swiper-button-next::after {
+  font-size: 1.1rem;
+  font-weight: var(--weight-bold);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Sub-Task 6 — Research, Teaching, Community
+═══════════════════════════════════════════════════════════════════════ */
+
+.research {
+  background-color: var(--color-bg);
+  padding: 80px 0;
+}
+
+.research__header,
+.teaching__header,
+.community__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.research__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.research-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.research-card:hover {
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  transform: translateY(-2px);
+}
+
+.research-card__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.research-card__status {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: var(--weight-semibold);
+  line-height: 1;
+}
+
+.status--active {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status--done {
+  background-color: #e5e7eb;
+  color: #475569;
+}
+
+.research-card__year {
+  font-size: var(--text-caption);
+  color: var(--color-text-muted);
+}
+
+.research-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.research-card__abstract {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.research-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  color: var(--color-primary-light);
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+}
+
+.research-card__link:hover,
+.research-card__link:focus-visible {
+  text-decoration: underline;
+}
+
+.teaching {
+  background-color: var(--color-bg-alt);
+  padding: 80px 0;
+}
+
+.teaching__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+}
+
+.teaching__courses,
+.teaching__philosophy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.teaching__course-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.teaching__course-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+}
+
+.teaching__course-item i {
+  color: var(--color-primary);
+  margin-top: 0.2rem;
+}
+
+.teaching__course-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.teaching__course-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.teaching__course-name {
+  font-family: var(--font-body);
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+}
+
+.teaching__blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: var(--color-text);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.teaching__notes {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.community {
+  background-color: var(--color-bg);
+  padding: 80px 0;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: var(--color-accent);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 45%;
+  margin-bottom: 2rem;
+}
+
+.timeline-item:nth-child(odd) {
+  margin-left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  margin-left: 55%;
+}
+
+.timeline-item__dot {
+  position: absolute;
+  top: 1.25rem;
+  right: -10.5%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-item__dot {
+  left: -10.5%;
+  right: auto;
+}
+
+.timeline-item__card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+}
+
+.timeline-item__year {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  margin-bottom: 0.35rem;
+}
+
+.timeline-item__title {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 0.35rem;
+}
+
+.timeline-item__org {
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item__desc {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+@media (max-width: 1023px) {
+  .research__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .section-subtitle {
+    margin: 0;
+  }
+
+  .research__header,
+  .teaching__header,
+  .community__header {
+    text-align: left;
+  }
+
+  .research__grid,
+  .teaching__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    left: 0.5rem;
+    transform: none;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(even),
+  .timeline-item:nth-child(odd) {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .timeline-item__dot,
+  .timeline-item:nth-child(even) .timeline-item__dot {
+    left: -1.95rem;
+    right: auto;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────────────
+   §5.8 Publications — Accordion
+──────────────────────────────────────────────────────────────────────── */
+.publications {
+  background-color: var(--color-bg-alt);
+  padding: 80px 0;
+}
+
+.accordion {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.accordion-group {
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--color-bg);
+  border: none;
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.accordion-trigger:hover {
+  background-color: var(--color-bg-alt);
+}
+
+.accordion-trigger .fa-chevron-down {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.accordion-group.open .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.accordion-panel {
+  display: none;
+  background-color: var(--color-bg);
+}
+
+.accordion-group.open .accordion-panel {
+  display: block;
+}
+
+.publication-list {
+  list-style: none;
+  padding: 0 1.5rem 1rem;
+  margin: 0;
+}
+
+.publication-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.publication-item:last-child {
+  border-bottom: none;
+}
+
+.publication-meta {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.25rem;
+}
+
+.publication-title {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 0.25rem;
+}
+
+.publication-journal {
+  color: var(--color-text-muted);
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+}
+
+.publication-doi {
+  font-size: 0.875rem;
+  color: var(--color-primary-light);
+  text-decoration: none;
+}
+
+.publication-doi:hover {
+  text-decoration: underline;
+}
+
+/* ───────────────────────────────────────────────────────────────────────
+   §5.9 Awards — Swiper Carousel
+──────────────────────────────────────────────────────────────────────── */
+.awards {
+  background-color: var(--color-bg);
+  padding: 80px 0;
+}
+
+.awards__swiper {
+  padding-bottom: 3rem; /* space for nav arrows */
+}
+
+.award-card {
+  background-color: var(--color-bg);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: box-shadow 0.25s ease;
+  height: auto;
+}
+
+.award-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 61, 165, 0.12);
+}
+
+.award-card__icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 2rem;
+  color: var(--color-white);
+}
+
+.award-card__name {
+  font-family: 'Merriweather', Georgia, serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin: 0 0 0.5rem;
+}
+
+.award-card__year {
+  font-weight: 600;
+  color: var(--color-accent);
+  margin: 0 0 0.25rem;
+}
+
+.award-card__institution {
+  font-style: italic;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0 0 0.75rem;
+}
+
+.award-card__desc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Sub-Task 8 — Contact Section (#contacto)
+═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Section wrapper ─────────────────────────────────────────────────── */
+.contact {
+  background: var(--color-primary);
+  padding: 80px 0;
+  color: var(--color-white);
+}
+
+/* ── Section header overrides for dark background ───────────────────── */
+.contact .section-label {
+  color: var(--color-accent);
+}
+
+.contact .section-header h2,
+.contact__header h2 {
+  color: var(--color-white);
+}
+
+.contact .section-subtitle {
+  color: rgba(255, 255, 255, 0.80);
+}
+
+.contact__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* ── Two-column grid ─────────────────────────────────────────────────── */
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ── Contact info column ─────────────────────────────────────────────── */
+.contact-info__name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+  margin-bottom: 0.25rem;
+}
+
+.contact-info__role {
+  font-size: var(--text-caption);
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1.5rem;
+}
+
+.contact-info__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.contact-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: var(--text-body);
+  color: rgba(255, 255, 255, 0.90);
+  line-height: 1.6;
+}
+
+.contact-info__item i {
+  color: var(--color-accent);
+  font-size: 1rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  width: 1rem;
+  text-align: center;
+}
+
+.contact-info__link {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-info__link:hover,
+.contact-info__link:focus-visible {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* ── Social icon row ─────────────────────────────────────────────────── */
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.20);
+  color: var(--color-white);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  background-color: rgba(255, 255, 255, 0.40);
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.contact-info__note {
+  font-size: var(--text-caption);
+  color: rgba(255, 255, 255, 0.70);
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+/* ── Contact form column ─────────────────────────────────────────────── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.form-group label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: var(--weight-medium);
+  color: var(--color-white);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  transition: border-color 0.2s ease;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+/* ── Submit button ───────────────────────────────────────────────────── */
+.contact-form__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.75rem;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+  align-self: flex-start;
+}
+
+.contact-form__submit:hover,
+.contact-form__submit:focus-visible {
+  filter: brightness(1.12);
+}
+
+.contact-form__submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ── Inline form status messages ─────────────────────────────────────── */
+#form-status {
+  font-size: var(--text-caption);
+  min-height: 1.25rem;
+}
+
+.form-status--success {
+  color: #86efac; /* light green, readable on dark blue */
+}
+
+.form-status--error {
+  color: #fca5a5; /* light red, readable on dark blue */
+}
+
+/* ── Responsive: stack on mobile ─────────────────────────────────────── */
+@media (max-width: 767px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__header {
+    text-align: left;
+  }
+
+  .contact .section-subtitle {
+    margin: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Sub-Task 8 — Footer
+═══════════════════════════════════════════════════════════════════════ */
+.footer {
+  background: #001D6C;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Sub-Task 9 — Scroll-reveal animations
+   Triggered by IntersectionObserver in main.js which adds .visible
+═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Section scroll-margin so fixed navbar doesn't cover headings ──── */
+section {
+  scroll-margin-top: 64px;
+}
+
+/* ── Reveal base state: invisible + shifted down ───────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* ── Revealed state (class added by IntersectionObserver) ───────────── */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Staggered children: small delay per direct child ──────────────── */
+.reveal-group > *:nth-child(1) { transition-delay: 0s; }
+.reveal-group > *:nth-child(2) { transition-delay: 0.1s; }
+.reveal-group > *:nth-child(3) { transition-delay: 0.2s; }
+.reveal-group > *:nth-child(4) { transition-delay: 0.3s; }
+.reveal-group > *:nth-child(5) { transition-delay: 0.4s; }
+.reveal-group > *:nth-child(6) { transition-delay: 0.5s; }
+
+/* ── Respect prefers-reduced-motion ───────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
