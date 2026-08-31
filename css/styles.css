@@ -287,19 +287,44 @@ ul, ol {
   height: 100%;
 }
 
-/* ── Per-slide placeholder background colors ─────────────────────────── */
+/* ── All slides: base positioning ────────────────────────────────────── */
+.hero__slide {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Per-slide background colours ────────────────────────────────────── */
 .hero__slide--1 { background-color: #003DA5; }
 .hero__slide--2 { background-color: #1A3A6B; }
 .hero__slide--3 { background-color: #0A2744; }
 
+/* ── Slide background image (used via <img> so Swiper clones it too) ─── */
+.hero__slide-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
 /* ── Dark-blue gradient overlay ──────────────────────────────────────── */
 .hero__overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
   background: linear-gradient(
     135deg,
-    rgba(0, 61, 165, 0.85) 0%,
-    rgba(0, 29, 108, 0.75) 100%
+    rgba(0, 61, 165, 0.55) 0%,
+    rgba(0, 29, 108, 0.45) 100%
   );
   pointer-events: none;
 }
@@ -419,175 +444,187 @@ ul, ol {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
-   Sub-Task 4 — About Me Section (#sobre-mi)
+   §5.3  Hero Panel — Sobre mí (#sobre-mi)
 ═══════════════════════════════════════════════════════════════════════ */
 
-/* ── Section wrapper ─────────────────────────────────────────────────── */
+/* ── Section: full viewport, project primary blue background ─────────── */
 .about {
-  background-color: var(--color-bg);
-  padding: 80px 0;
-}
-
-/* ── Centered content container ─────────────────────────────────────── */
-.about__container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-/* ── Section header block ────────────────────────────────────────────── */
-.about__header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-/* ── Small caps label above h2 ───────────────────────────────────────── */
-.about__label {
-  font-family: var(--font-body);
-  font-size: var(--text-caption);   /* 0.875 rem */
-  font-weight: var(--weight-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--color-accent);
-  margin-bottom: 0.5rem;
-}
-
-/* ── Two-column grid ─────────────────────────────────────────────────── */
-.about__grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-/* ── Photo column wrapper ────────────────────────────────────────────── */
-.about__photo-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-/* ── Circular photo placeholder ──────────────────────────────────────── */
-.about__photo-placeholder {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background-color: var(--color-bg-alt);
-  border: 4px solid var(--color-primary);
-  box-shadow: 0 6px 24px rgba(0, 61, 165, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: var(--color-primary);
+  padding: calc(64px + 48px) 0 0; /* 64px navbar offset + 48px breathing room */
   overflow: hidden;
 }
 
-.about__photo-placeholder .fa-user {
-  font-size: 7rem;
-  color: var(--color-primary);
-  opacity: 0.35;
+/* ── Container ───────────────────────────────────────────────────────── */
+.about__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
 }
 
-/* ── Real photo (when <img> replaces placeholder) ────────────────────── */
-.about__photo-img {
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  border: 4px solid var(--color-primary);
-  box-shadow: 0 6px 24px rgba(0, 61, 165, 0.15);
-  object-fit: cover;
+/* ── Two-column hero layout ──────────────────────────────────────────── */
+.about__hero {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+  align-items: center;
 }
 
-/* ── Bio column ──────────────────────────────────────────────────────── */
-.about__bio-col {
+/* ── Left: text block ────────────────────────────────────────────────── */
+.about__hero-text {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
+  padding-bottom: 1.5rem;
 }
 
-/* ── Name h3 ─────────────────────────────────────────────────────────── */
-.about__name {
-  margin-bottom: 0;
-}
-
-/* ── Role / title line ───────────────────────────────────────────────── */
-.about__title-role {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: var(--weight-medium);
-  color: var(--color-text-muted);
-}
-
-/* ── Institution badge pill ──────────────────────────────────────────── */
-.about__institution {
-  display: inline-block;
-  background-color: var(--color-bg-alt);
-  color: var(--color-primary);
+/* ── Small caps eyebrow label ────────────────────────────────────────── */
+.about__label {
   font-family: var(--font-body);
   font-size: var(--text-caption);
-  font-weight: var(--weight-medium);
-  padding: 0.3rem 0.85rem;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 61, 165, 0.20);
-  width: fit-content;
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  margin: 0;
 }
 
-/* ── Biography paragraph ─────────────────────────────────────────────── */
-.about__bio {
+/* ── Candidate name ──────────────────────────────────────────────────── */
+.about__hero-name {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: var(--weight-bold);
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* ── Role line ───────────────────────────────────────────────────────── */
+.about__hero-role {
   font-family: var(--font-body);
-  font-size: var(--text-body);
-  color: var(--color-text);
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0;
+}
+
+/* ── Short bio ───────────────────────────────────────────────────────── */
+.about__hero-bio {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.80);
   line-height: 1.7;
-  margin-top: 0.5rem;
+  max-width: 540px;
+  margin: 0;
 }
 
 /* ── Stat counters row ───────────────────────────────────────────────── */
 .about__stats {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 1rem;
+  gap: 2rem;
+  margin: 0;
 }
 
 /* ── Individual counter ──────────────────────────────────────────────── */
 .stat-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-  min-width: 80px;
+  align-items: flex-start;
+  gap: 0.2rem;
 }
 
 /* ── Counter number ──────────────────────────────────────────────────── */
 .stat-number {
   font-family: var(--font-heading);
   font-weight: var(--weight-bold);
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   line-height: 1;
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 /* ── Counter label ───────────────────────────────────────────────────── */
 .stat-label {
   font-family: var(--font-body);
-  font-size: var(--text-caption);  /* 0.875 rem */
+  font-size: var(--text-caption);
   font-weight: var(--weight-medium);
-  color: var(--color-text-muted);
-  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
 }
 
-/* ── Responsive: stack columns on mobile ─────────────────────────────── */
-@media (max-width: 767px) {
-  .about__grid {
-    grid-template-columns: 1fr;
+/* ── CTA button ──────────────────────────────────────────────────────── */
+.about__hero-cta {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  width: fit-content;
+  transition: background-color 0.2s ease;
+}
+.about__hero-cta:hover,
+.about__hero-cta:focus-visible {
+  background-color: var(--color-primary-light);
+  text-decoration: none;
+}
+
+/* ── Right: photo ────────────────────────────────────────────────────── */
+.about__hero-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__hero-img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  filter: drop-shadow(-6px 0 24px rgba(0,0,0,0.40));
+}
+
+/* ── Responsive: tablet ──────────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .about__hero {
+    grid-template-columns: 1fr 240px;
+    gap: 2rem;
   }
-  .about__photo-wrapper {
-    justify-content: center;
+  .about__hero-img {
+    max-width: 240px;
+  }
+}
+
+/* ── Responsive: mobile ──────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .about {
+    padding: calc(64px + 32px) 0 0;
+  }
+  .about__hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  .about__hero-text {
+    align-items: center;
+    padding-bottom: 0;
+  }
+  .about__hero-bio {
+    max-width: 100%;
   }
   .about__stats {
     justify-content: center;
   }
-  .about__header {
-    text-align: left;
+  .stat-item {
+    align-items: center;
+  }
+  .about__hero-photo {
+    order: -1;
+    justify-content: center;
+  }
+  .about__hero-img {
+    max-width: 200px;
   }
 }
 
@@ -1016,7 +1053,217 @@ ul, ol {
 }
 
 /* ───────────────────────────────────────────────────────────────────────
-   §5.8 Publications — Accordion
+   §5.8 Propuestas — Cards grid
+──────────────────────────────────────────────────────────────────────── */
+.propuestas {
+  background-color: var(--color-bg);
+  padding: 80px 0;
+}
+
+.propuestas__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.propuestas__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.propuesta-card {
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-accent);
+  border-radius: 8px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.propuesta-card__icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.propuesta-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.propuesta-card__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-text);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 1023px) {
+  .propuestas__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .propuestas__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────────────
+   §5.9 Testimonios
+──────────────────────────────────────────────────────────────────────── */
+.testimonios {
+  background-color: var(--color-primary);
+  padding: 80px 0;
+}
+
+.testimonios__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.testimonios__header .section-label {
+  color: var(--color-accent);
+}
+
+.testimonios__header .section-title {
+  color: var(--color-white);
+}
+
+.testimonios__header .section-subtitle {
+  color: rgba(255, 255, 255, 0.70);
+}
+
+/* ── 3-column grid ───────────────────────────────────────────────────── */
+.testimonios__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Individual card ─────────────────────────────────────────────────── */
+.testimonio-card {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Media area (photo or video) ─────────────────────────────────────── */
+.testimonio-card__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+/* ── Placeholder shown before real media is added ────────────────────── */
+.testimonio-card__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.30);
+  font-size: 3rem;
+}
+
+/* ── Real photo: swap placeholder div for <img> ──────────────────────── */
+.testimonio-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Real video: swap placeholder div for <iframe> ───────────────────── */
+.testimonio-card__media iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ── Quote + author ──────────────────────────────────────────────────── */
+.testimonio-card__quote {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  padding: 1.5rem 1.5rem 0;
+  margin: 0;
+  flex: 1;
+  font-style: italic;
+}
+
+.testimonio-card__author {
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+.testimonio-card__name {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  font-weight: var(--weight-semibold);
+  color: var(--color-accent);
+  margin: 0;
+}
+
+.testimonio-card__role {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  color: rgba(255, 255, 255, 0.50);
+  margin: 0;
+}
+
+/* ── Bottom note ─────────────────────────────────────────────────────── */
+.testimonios__note {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  color: rgba(255, 255, 255, 0.50);
+}
+
+.testimonios__note-link {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.testimonios__note-link:hover {
+  color: var(--color-white);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .testimonios__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .testimonios__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────────────
+   §5.10 Publications — Accordion
 ──────────────────────────────────────────────────────────────────────── */
 .publications {
   background-color: var(--color-bg-alt);

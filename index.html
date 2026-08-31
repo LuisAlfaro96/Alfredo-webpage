@@ -50,7 +50,7 @@
   />
 
   <!-- Project styles -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css?v=15" />
 </head>
 <body class="antialiased">
 
@@ -67,14 +67,12 @@
 
       <!-- ── Desktop nav links ────────────────────────────────────── -->
       <ul class="navbar__links" role="list">
-        <li><a href="#inicio"        class="nav-link">Inicio</a></li>
         <li><a href="#sobre-mi"      class="nav-link">Sobre mí</a></li>
-        <li><a href="#logros"        class="nav-link">Logros</a></li>
-        <li><a href="#investigacion" class="nav-link">Investigación</a></li>
-        <li><a href="#docencia"      class="nav-link">Docencia</a></li>
-        <li><a href="#comunidad"     class="nav-link">Comunidad</a></li>
+        <li><a href="#logros"        class="nav-link">Trayectoria Académica</a></li>
+        <li><a href="#comunidad"     class="nav-link">Trayectoria de Liderazgo</a></li>
+        <li><a href="#propuestas"    class="nav-link">Propuestas</a></li>
+        <li><a href="#testimonios"   class="nav-link">Testimonios</a></li>
         <li><a href="#publicaciones" class="nav-link">Publicaciones</a></li>
-        <li><a href="#premios"       class="nav-link">Premios</a></li>
         <li><a href="#contacto"      class="nav-link">Contacto</a></li>
       </ul>
 
@@ -94,14 +92,12 @@
     <!-- ── Mobile slide-down drawer ─────────────────────────────── -->
     <div id="nav-drawer" class="nav-drawer" aria-hidden="true">
       <ul role="list">
-        <li><a href="#inicio"        class="nav-link">Inicio</a></li>
         <li><a href="#sobre-mi"      class="nav-link">Sobre mí</a></li>
-        <li><a href="#logros"        class="nav-link">Logros</a></li>
-        <li><a href="#investigacion" class="nav-link">Investigación</a></li>
-        <li><a href="#docencia"      class="nav-link">Docencia</a></li>
-        <li><a href="#comunidad"     class="nav-link">Comunidad</a></li>
+        <li><a href="#logros"        class="nav-link">Trayectoria Académica</a></li>
+        <li><a href="#comunidad"     class="nav-link">Trayectoria de Liderazgo</a></li>
+        <li><a href="#propuestas"    class="nav-link">Propuestas</a></li>
+        <li><a href="#testimonios"   class="nav-link">Testimonios</a></li>
         <li><a href="#publicaciones" class="nav-link">Publicaciones</a></li>
-        <li><a href="#premios"       class="nav-link">Premios</a></li>
         <li><a href="#contacto"      class="nav-link">Contacto</a></li>
       </ul>
     </div>
@@ -113,107 +109,25 @@
   ════════════════════════════════════════════════════════════════════ -->
   <main>
 
-    <!-- ── §5.2  Hero / Inicio ──────────────────────────────────── -->
-    <section id="inicio" class="hero" aria-label="Sección de inicio">
-
-      <div
-        id="hero-swiper"
-        class="swiper"
-        aria-label="Presentación del candidato"
-      >
-        <div class="swiper-wrapper">
-
-          <!-- ── Slide 1 ──────────────────────────────────────────── -->
-          <div class="swiper-slide hero__slide hero__slide--1">
-            <div class="hero__overlay" aria-hidden="true"></div>
-            <div class="hero__content">
-              <p class="hero__subtitle">Candidato a Director del Campus Tecnológico Local de San Carlos</p>
-              <h1 class="hero__title">Dr. Alfredo Elías Alfaro Ramos</h1>
-              <p class="hero__tagline">Liderazgo académico con visión de futuro</p>
-              <a href="#sobre-mi" class="hero__cta">Conoce mi propuesta</a>
-            </div>
-          </div>
-
-          <!-- ── Slide 2 ──────────────────────────────────────────── -->
-          <div class="swiper-slide hero__slide hero__slide--2">
-            <div class="hero__overlay" aria-hidden="true"></div>
-            <div class="hero__content">
-              <p class="hero__subtitle">Compromiso con la excelencia educativa</p>
-              <h1 class="hero__title">Dr. Alfredo Elías Alfaro Ramos</h1>
-              <p class="hero__tagline">Investigación, docencia y comunidad como pilares de gestión</p>
-              <a href="#sobre-mi" class="hero__cta">Conoce mi propuesta</a>
-            </div>
-          </div>
-
-          <!-- ── Slide 3 ──────────────────────────────────────────── -->
-          <div class="swiper-slide hero__slide hero__slide--3">
-            <div class="hero__overlay" aria-hidden="true"></div>
-            <div class="hero__content">
-              <p class="hero__subtitle">Una propuesta basada en experiencia</p>
-              <h1 class="hero__title">Dr. Alfredo Elías Alfaro Ramos</h1>
-              <p class="hero__tagline">Más de 20 años formando profesionales en el Campus San Carlos</p>
-              <a href="#sobre-mi" class="hero__cta">Conoce mi propuesta</a>
-            </div>
-          </div>
-
-        </div><!-- /.swiper-wrapper -->
-
-        <!-- Pagination dots -->
-        <div class="swiper-pagination"></div>
-
-        <!-- Navigation arrows -->
-        <div class="swiper-button-prev" aria-label="Diapositiva anterior"></div>
-        <div class="swiper-button-next" aria-label="Diapositiva siguiente"></div>
-
-      </div><!-- /#hero-swiper -->
-
-    </section>
-
-    <!-- ── §5.3  Sobre mí ───────────────────────────────────────── -->
+    <!-- ── §5.3  Sobre mí — Hero panel ─────────────────────────── -->
     <section id="sobre-mi" class="about" aria-label="Sobre mí">
       <div class="about__container">
 
-        <!-- ── Section header ───────────────────────────────────── -->
-        <div class="about__header">
-          <p class="about__label">Sobre mí</p>
-          <h2>Dr. Alfredo Elías Alfaro Ramos</h2>
-        </div>
+        <div class="about__hero reveal">
 
-        <!-- ── Two-column grid ──────────────────────────────────── -->
-        <div class="about__grid reveal">
-
-          <!-- ── Left column: profile photo ───────────────────── -->
-          <div class="about__photo-wrapper">
-            <!-- Replace the placeholder div with an <img> once the
-                 real photo is available:
-                 <img src="assets/images/profile.jpg"
-                      alt="Foto de perfil del Dr. Alfredo Elías Alfaro Ramos"
-                      class="about__photo-img" /> -->
-            <div class="about__photo-placeholder" role="img" aria-label="Foto de perfil del Dr. Alfredo Elías Alfaro Ramos">
-              <i class="fa-solid fa-user" aria-hidden="true"></i>
-            </div>
-          </div>
-
-          <!-- ── Right column: bio + counters ─────────────────── -->
-          <div class="about__bio-col">
-
-            <!-- Name, title, institution -->
-            <h3 class="about__name">Dr. Alfredo Elías Alfaro Ramos</h3>
-            <p class="about__title-role">Profesor de Economía</p>
-            <span class="about__institution">Instituto Tecnológico de Costa Rica — Sede San Carlos</span>
-
-            <!-- Biography -->
-            <p class="about__bio">
-              El Dr. Alfredo Elías Alfaro Ramos es Profesor de Economía en el Instituto Tecnológico
-              de Costa Rica, Sede San Carlos, donde lleva más de quince años formando profesionales
-              con una sólida base en pensamiento económico y análisis cuantitativo. Su labor docente
-              se complementa con una activa agenda de investigación aplicada a los desafíos
-              socioeconómicos de la Región Huetar Norte, contando con numerosas publicaciones
-              arbitradas y proyectos financiados a nivel nacional e institucional.
+          <!-- ── Left: text content ───────────────────────────── -->
+          <div class="about__hero-text">
+            <p class="about__label">Candidato a Director</p>
+            <h1 class="about__hero-name">Dr. Alfredo Elías<br>Alfaro Ramos</h1>
+            <p class="about__hero-role">Profesor de Economía · ITCR Sede San Carlos</p>
+            <p class="about__hero-bio">
+              Más de 15 años formando profesionales con visión crítica y compromiso regional.
+              Investigador activo, líder académico y candidato a Director del Campus Tecnológico
+              Local de San Carlos.
             </p>
 
-            <!-- Stat counters -->
-            <div class="about__stats reveal" aria-label="Estadísticas académicas">
+            <!-- Key stats -->
+            <div class="about__stats" aria-label="Estadísticas académicas">
               <div class="stat-item">
                 <span class="stat-number" data-target="15" aria-live="polite">0</span>
                 <span class="stat-label">Años de docencia</span>
@@ -224,28 +138,38 @@
               </div>
               <div class="stat-item">
                 <span class="stat-number" data-target="8" aria-live="polite">0</span>
-                <span class="stat-label">Proyectos de investigación</span>
+                <span class="stat-label">Proyectos</span>
               </div>
               <div class="stat-item">
                 <span class="stat-number" data-target="5" aria-live="polite">0</span>
-                <span class="stat-label">Premios y reconocimientos</span>
+                <span class="stat-label">Reconocimientos</span>
               </div>
-            </div><!-- /.about__stats -->
+            </div>
 
-          </div><!-- /.about__bio-col -->
+            <a href="#logros" class="about__hero-cta">Ver trayectoria</a>
+          </div>
 
-        </div><!-- /.about__grid -->
+          <!-- ── Right: profile photo ──────────────────────────── -->
+          <div class="about__hero-photo">
+            <img
+              src="assets/images/profile.jpeg"
+              alt="Dr. Alfredo Elías Alfaro Ramos"
+              class="about__hero-img"
+            />
+          </div>
+
+        </div><!-- /.about__hero -->
       </div><!-- /.about__container -->
     </section>
 
-    <!-- ── §5.4  Logros ─────────────────────────────────────────── -->
-    <section id="logros" class="achievements" aria-label="Logros">
+    <!-- ── §5.4  Trayectoria Académica ──────────────────────────── -->
+    <section id="logros" class="achievements" aria-label="Trayectoria Académica">
       <div class="container">
 
         <!-- Section header -->
         <header class="achievements__header">
-          <p class="section-label">Logros</p>
-          <h2 class="section-title">Principales Logros Académicos</h2>
+          <p class="section-label">Trayectoria Académica</p>
+          <h2 class="section-title">Honestidad Valor y enseñanza</h2>
           <p class="section-subtitle">
             Una trayectoria marcada por la excelencia docente, la investigación aplicada
             y el compromiso con la comunidad universitaria.
@@ -356,146 +280,12 @@
       </div><!-- /.container -->
     </section>
 
-    <!-- ── §5.5  Investigación ──────────────────────────────────── -->
-    <section id="investigacion" class="research" aria-label="Investigación">
-      <div class="container">
-        <header class="research__header">
-          <p class="section-label">Investigación</p>
-          <h2 class="section-title">Proyectos de Investigación</h2>
-          <p class="section-subtitle">
-            Iniciativas orientadas al análisis económico aplicado y al fortalecimiento del desarrollo
-            regional en la Zona Norte de Costa Rica.
-          </p>
-        </header>
-
-        <div class="research__grid reveal-group">
-          <article class="research-card reveal">
-            <div class="research-card__meta">
-              <span class="research-card__status status--active">Activo</span>
-              <span class="research-card__year">2022–2024</span>
-            </div>
-            <h3 class="research-card__title">Análisis del Impacto Económico del Turismo Rural en la Zona Norte de Costa Rica</h3>
-            <p class="research-card__abstract">
-              Estudia la contribución del turismo rural a la generación de empleo, ingresos familiares y encadenamientos productivos locales. El proyecto integra evidencia cuantitativa y trabajo de campo con emprendimientos comunitarios de la región.
-            </p>
-            <a href="#contacto" class="research-card__link">Ver más <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-
-          <article class="research-card reveal">
-            <div class="research-card__meta">
-              <span class="research-card__status status--active">Activo</span>
-              <span class="research-card__year">2023–2025</span>
-            </div>
-            <h3 class="research-card__title">Modelos de Desarrollo Económico Local para Municipios de la Región Huetar Norte</h3>
-            <p class="research-card__abstract">
-              Analiza estrategias de desarrollo económico local con énfasis en gobernanza, inversión pública y articulación territorial. Busca proponer lineamientos aplicables para municipalidades con retos de crecimiento inclusivo y sostenibilidad.
-            </p>
-            <a href="#contacto" class="research-card__link">Ver más <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-
-          <article class="research-card reveal">
-            <div class="research-card__meta">
-              <span class="research-card__status status--done">Finalizado</span>
-              <span class="research-card__year">2019–2022</span>
-            </div>
-            <h3 class="research-card__title">Evaluación de Políticas de Empleo Juvenil en Regiones Periféricas de Costa Rica</h3>
-            <p class="research-card__abstract">
-              Evaluó programas públicos de inserción laboral juvenil en contextos territoriales con menores oportunidades económicas. Los hallazgos permitieron identificar brechas en capacitación, intermediación laboral y pertinencia regional.
-            </p>
-            <a href="#contacto" class="research-card__link">Ver más <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-
-          <article class="research-card reveal">
-            <div class="research-card__meta">
-              <span class="research-card__status status--done">Finalizado</span>
-              <span class="research-card__year">2017–2019</span>
-            </div>
-            <h3 class="research-card__title">Competitividad de las PYMES Agroindustriales en la Zona Norte</h3>
-            <p class="research-card__abstract">
-              Examinó factores de competitividad en pequeñas y medianas empresas agroindustriales vinculadas a cadenas regionales de valor. El estudio generó recomendaciones sobre innovación, acceso a mercados y fortalecimiento empresarial.
-            </p>
-            <a href="#contacto" class="research-card__link">Ver más <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── §5.6  Docencia ───────────────────────────────────────── -->
-    <section id="docencia" class="teaching" aria-label="Docencia">
-      <div class="container">
-        <header class="teaching__header">
-          <p class="section-label">Docencia</p>
-          <h2 class="section-title">Labor Docente</h2>
-        </header>
-
-        <div class="teaching__grid reveal">
-          <div class="teaching__courses">
-            <h3>Cursos Impartidos</h3>
-            <ul class="teaching__course-list">
-              <li class="teaching__course-item">
-                <i class="fa-solid fa-circle-dot" aria-hidden="true"></i>
-                <div>
-                  <span class="teaching__course-code">EC-1000</span>
-                  <span class="teaching__course-name">Principios de Economía</span>
-                </div>
-              </li>
-              <li class="teaching__course-item">
-                <i class="fa-solid fa-circle-dot" aria-hidden="true"></i>
-                <div>
-                  <span class="teaching__course-code">EC-2100</span>
-                  <span class="teaching__course-name">Microeconomía</span>
-                </div>
-              </li>
-              <li class="teaching__course-item">
-                <i class="fa-solid fa-circle-dot" aria-hidden="true"></i>
-                <div>
-                  <span class="teaching__course-code">EC-2200</span>
-                  <span class="teaching__course-name">Macroeconomía</span>
-                </div>
-              </li>
-              <li class="teaching__course-item">
-                <i class="fa-solid fa-circle-dot" aria-hidden="true"></i>
-                <div>
-                  <span class="teaching__course-code">EC-3100</span>
-                  <span class="teaching__course-name">Economía del Desarrollo</span>
-                </div>
-              </li>
-              <li class="teaching__course-item">
-                <i class="fa-solid fa-circle-dot" aria-hidden="true"></i>
-                <div>
-                  <span class="teaching__course-code">EC-3300</span>
-                  <span class="teaching__course-name">Econometría Aplicada</span>
-                </div>
-              </li>
-              <li class="teaching__course-item">
-                <i class="fa-solid fa-circle-dot" aria-hidden="true"></i>
-                <div>
-                  <span class="teaching__course-code">EC-4100</span>
-                  <span class="teaching__course-name">Economía Ambiental y Recursos Naturales</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <div class="teaching__philosophy">
-            <h3>Filosofía de Enseñanza</h3>
-            <blockquote class="teaching__blockquote">
-              La enseñanza de la economía debe conectar el análisis teórico con los desafíos concretos de los territorios. Procuro que cada curso fortalezca el pensamiento crítico, la capacidad de interpretar evidencia y la sensibilidad ante las realidades del desarrollo rural. Formar economistas implica también cultivar compromiso ético y vocación de servicio hacia sus comunidades.
-            </blockquote>
-            <p class="teaching__notes">
-              Mi enfoque docente combina estudio de casos, análisis de datos aplicados y discusión de políticas públicas, promoviendo una participación activa del estudiantado y una comprensión contextualizada de los problemas económicos nacionales y regionales.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── §5.7  Trabajo Comunal ────────────────────────────────── -->
-    <section id="comunidad" class="community" aria-label="Trabajo comunal">
+    <!-- ── §5.7  Trayectoria de Liderazgo ──────────────────────── -->
+    <section id="comunidad" class="community" aria-label="Trayectoria de liderazgo">
       <div class="container">
         <header class="community__header">
-          <p class="section-label">Comunidad</p>
-          <h2 class="section-title">Trabajo Comunal y Extensión</h2>
+          <p class="section-label">Trayectoria de Liderazgo</p>
+          <h2 class="section-title">Liderazgo Académico y Comunal</h2>
         </header>
 
         <div class="timeline">
@@ -552,7 +342,174 @@
       </div>
     </section>
 
-    <!-- ── §5.8  Publicaciones ──────────────────────────────────── -->
+    <!-- ── §5.8  Propuestas ─────────────────────────────────────── -->
+    <section id="propuestas" class="propuestas" aria-label="Propuestas">
+      <div class="container">
+
+        <header class="propuestas__header">
+          <p class="section-label">Propuestas</p>
+          <h2 class="section-title">Propuestas de Gestión</h2>
+          <p class="section-subtitle">
+            Ideas y lineamientos para fortalecer las distintas áreas del Campus Tecnológico Local de San Carlos.
+          </p>
+        </header>
+
+        <div class="propuestas__grid reveal-group">
+
+          <!-- ── Propuesta 1 ── -->
+          <article class="propuesta-card reveal">
+            <div class="propuesta-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <h3 class="propuesta-card__title">Fortalecimiento Académico</h3>
+            <p class="propuesta-card__body">
+              [Placeholder] Descripción de propuestas orientadas a mejorar la calidad académica,
+              actualización curricular y formación continua del cuerpo docente.
+            </p>
+          </article>
+
+          <!-- ── Propuesta 2 ── -->
+          <article class="propuesta-card reveal">
+            <div class="propuesta-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-flask"></i>
+            </div>
+            <h3 class="propuesta-card__title">Investigación e Innovación</h3>
+            <p class="propuesta-card__body">
+              [Placeholder] Lineamientos para impulsar proyectos de investigación aplicada,
+              vinculación con el sector productivo y acceso a fondos externos.
+            </p>
+          </article>
+
+          <!-- ── Propuesta 3 ── -->
+          <article class="propuesta-card reveal">
+            <div class="propuesta-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <h3 class="propuesta-card__title">Vinculación con la Comunidad</h3>
+            <p class="propuesta-card__body">
+              [Placeholder] Estrategias para fortalecer la extensión universitaria,
+              alianzas con municipios y organizaciones de la Región Huetar Norte.
+            </p>
+          </article>
+
+          <!-- ── Propuesta 4 ── -->
+          <article class="propuesta-card reveal">
+            <div class="propuesta-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <h3 class="propuesta-card__title">Gestión Institucional</h3>
+            <p class="propuesta-card__body">
+              [Placeholder] Propuestas de modernización administrativa, transparencia en la gestión
+              y mejora de los procesos internos del campus.
+            </p>
+          </article>
+
+          <!-- ── Propuesta 5 ── -->
+          <article class="propuesta-card reveal">
+            <div class="propuesta-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <h3 class="propuesta-card__title">Sostenibilidad y Bienestar</h3>
+            <p class="propuesta-card__body">
+              [Placeholder] Iniciativas de sostenibilidad ambiental, bienestar estudiantil
+              y mejora de infraestructura para la comunidad universitaria.
+            </p>
+          </article>
+
+          <!-- ── Propuesta 6 ── -->
+          <article class="propuesta-card reveal">
+            <div class="propuesta-card__icon" aria-hidden="true">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <h3 class="propuesta-card__title">Transformación Digital</h3>
+            <p class="propuesta-card__body">
+              [Placeholder] Plan de digitalización de servicios, adopción de herramientas tecnológicas
+              y formación en competencias digitales para docentes y estudiantes.
+            </p>
+          </article>
+
+        </div><!-- /.propuestas__grid -->
+      </div><!-- /.container -->
+    </section>
+
+    <!-- ── §5.9  Testimonios ────────────────────────────────────── -->
+    <section id="testimonios" class="testimonios" aria-label="Testimonios">
+      <div class="container">
+
+        <header class="testimonios__header">
+          <p class="section-label">Testimonios</p>
+          <h2 class="section-title">Lo que dicen de Alfredo</h2>
+          <p class="section-subtitle">
+            Colegas, estudiantes y miembros de la comunidad comparten sus palabras sobre
+            el Dr. Alfredo Elías Alfaro Ramos.
+          </p>
+        </header>
+
+        <div class="testimonios__grid reveal-group">
+
+          <!-- ── Testimonio 1 ── -->
+          <article class="testimonio-card reveal">
+            <div class="testimonio-card__media">
+              <!-- Replace with <img> or <iframe> when real media is available -->
+              <div class="testimonio-card__placeholder">
+                <i class="fa-solid fa-circle-play" aria-hidden="true"></i>
+              </div>
+            </div>
+            <blockquote class="testimonio-card__quote">
+              "Un docente que transformó mi forma de ver la economía. Su compromiso con
+              la región es genuino y admirable."
+            </blockquote>
+            <footer class="testimonio-card__author">
+              <p class="testimonio-card__name">[Nombre del estudiante]</p>
+              <p class="testimonio-card__role">Estudiante, ITCR Sede San Carlos</p>
+            </footer>
+          </article>
+
+          <!-- ── Testimonio 2 ── -->
+          <article class="testimonio-card reveal">
+            <div class="testimonio-card__media">
+              <div class="testimonio-card__placeholder">
+                <i class="fa-solid fa-circle-play" aria-hidden="true"></i>
+              </div>
+            </div>
+            <blockquote class="testimonio-card__quote">
+              "Alfredo siempre ha liderado con el ejemplo. Su visión para el campus es
+              exactamente lo que necesitamos en este momento."
+            </blockquote>
+            <footer class="testimonio-card__author">
+              <p class="testimonio-card__name">[Nombre del colega]</p>
+              <p class="testimonio-card__role">Profesor, Escuela de Administración</p>
+            </footer>
+          </article>
+
+          <!-- ── Testimonio 3 ── -->
+          <article class="testimonio-card reveal">
+            <div class="testimonio-card__media">
+              <div class="testimonio-card__placeholder">
+                <i class="fa-solid fa-circle-play" aria-hidden="true"></i>
+              </div>
+            </div>
+            <blockquote class="testimonio-card__quote">
+              "Su trabajo con las comunidades rurales ha dejado una huella real. Es el
+              candidato indicado para dirigir el campus."
+            </blockquote>
+            <footer class="testimonio-card__author">
+              <p class="testimonio-card__name">[Nombre del representante]</p>
+              <p class="testimonio-card__role">Municipalidad de San Carlos</p>
+            </footer>
+          </article>
+
+        </div><!-- /.testimonios__grid -->
+
+        <!-- ── Note ── -->
+        <p class="testimonios__note">
+          ¿Deseas compartir tus palabras? <a href="#contacto" class="testimonios__note-link">Escríbenos aquí.</a>
+        </p>
+
+      </div><!-- /.container -->
+    </section>
+
+    <!-- ── §5.10  Publicaciones ──────────────────────────────────── -->
     <section id="publicaciones" class="publications" aria-label="Publicaciones">
       <div class="container">
 
@@ -636,95 +593,6 @@
           </div>
 
         </div><!-- /.accordion -->
-      </div><!-- /.container -->
-    </section>
-
-    <!-- ── §5.9  Premios ────────────────────────────────────────── -->
-    <section id="premios" class="awards" aria-label="Premios y reconocimientos">
-      <div class="container">
-
-        <!-- Section header -->
-        <div class="section-header awards__header reveal" style="text-align:center;">
-          <span class="section-label">Premios</span>
-          <h2 class="section-title">Premios y Reconocimientos</h2>
-          <p class="section-subtitle">Distinciones académicas, docentes y comunitarias a lo largo de la carrera</p>
-        </div>
-
-        <!-- Awards Swiper -->
-        <div id="premios-swiper" class="swiper awards__swiper" aria-label="Carrusel de premios">
-          <div class="swiper-wrapper">
-
-            <!-- Card 1 -->
-            <div class="swiper-slide">
-              <div class="award-card">
-                <div class="award-card__icon" aria-hidden="true">
-                  <i class="fa-solid fa-trophy"></i>
-                </div>
-                <h3 class="award-card__name">Premio a la Excelencia Docente</h3>
-                <p class="award-card__year">2023</p>
-                <p class="award-card__institution">ITCR Sede San Carlos</p>
-                <p class="award-card__desc">Otorgado por estudiantes y Consejo de Escuela en reconocimiento a la calidad pedagógica.</p>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="swiper-slide">
-              <div class="award-card">
-                <div class="award-card__icon" aria-hidden="true">
-                  <i class="fa-solid fa-medal"></i>
-                </div>
-                <h3 class="award-card__name">Reconocimiento por Investigación Destacada</h3>
-                <p class="award-card__year">2021</p>
-                <p class="award-card__institution">Vicerrectoría de Investigación ITCR</p>
-                <p class="award-card__desc">Mención honorífica por proyecto FEES en economía regional.</p>
-              </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="swiper-slide">
-              <div class="award-card">
-                <div class="award-card__icon" aria-hidden="true">
-                  <i class="fa-solid fa-star"></i>
-                </div>
-                <h3 class="award-card__name">Doctorado con Distinción</h3>
-                <p class="award-card__year">2020</p>
-                <p class="award-card__institution">Universidad de Costa Rica</p>
-                <p class="award-card__desc">Defensa de tesis doctoral calificada con distinción por el tribunal evaluador.</p>
-              </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="swiper-slide">
-              <div class="award-card">
-                <div class="award-card__icon" aria-hidden="true">
-                  <i class="fa-solid fa-award"></i>
-                </div>
-                <h3 class="award-card__name">Mejor Ponencia</h3>
-                <p class="award-card__year">2018</p>
-                <p class="award-card__institution">Congreso Latinoamericano de Economía</p>
-                <p class="award-card__desc">Reconocimiento por ponencia destacada sobre economía rural y desarrollo periférico.</p>
-              </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="swiper-slide">
-              <div class="award-card">
-                <div class="award-card__icon" aria-hidden="true">
-                  <i class="fa-solid fa-certificate"></i>
-                </div>
-                <h3 class="award-card__name">Asesor del Año</h3>
-                <p class="award-card__year">2017</p>
-                <p class="award-card__institution">Municipalidad de San Carlos</p>
-                <p class="award-card__desc">Reconocimiento al trabajo de extensión comunitaria y asesoría técnica municipal.</p>
-              </div>
-            </div>
-
-          </div><!-- /.swiper-wrapper -->
-
-          <button class="swiper-button-prev" aria-label="Premio anterior"></button>
-          <button class="swiper-button-next" aria-label="Premio siguiente"></button>
-        </div><!-- /#premios-swiper -->
-
       </div><!-- /.container -->
     </section>
 
