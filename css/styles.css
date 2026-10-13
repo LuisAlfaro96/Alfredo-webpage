@@ -1418,6 +1418,155 @@ ul, ol {
 }
 
 /* ───────────────────────────────────────────────────────────────────────
+   §5.8B Testimonios y Apoyo Comunal (#apoyo)
+──────────────────────────────────────────────────────────────────────── */
+.apoyo {
+  background-color: var(--color-bg-alt);
+  padding: 80px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.apoyo__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.apoyo__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.apoyo-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(14, 43, 92, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.apoyo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(14, 43, 92, 0.12);
+}
+
+.apoyo-card__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.apoyo-card__media iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.apoyo-card__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.apoyo-card__author-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: 0.4rem;
+}
+
+.apoyo-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  margin: 0 0 0.5rem;
+}
+
+.apoyo-card__desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Call to action box ── */
+.apoyo__cta-box {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #153c7c 100%);
+  border-radius: 14px;
+  padding: 2.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: var(--color-white);
+  box-shadow: 0 10px 25px rgba(14, 43, 92, 0.2);
+}
+
+.apoyo__cta-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+  margin-bottom: 0.35rem;
+}
+
+.apoyo__cta-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.apoyo__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: var(--weight-bold);
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.apoyo__cta-btn:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 900px) {
+  .apoyo__grid {
+    grid-template-columns: 1fr;
+  }
+  .apoyo__cta-box {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────────────
    §5.9 Testimonios
 ──────────────────────────────────────────────────────────────────────── */
 .testimonios {
