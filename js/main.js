@@ -8,7 +8,7 @@
 
 'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
+const initApp = () => {
 
   // ═══════════════════════════════════════════════════════════════════
   // Sub-Task 2 — Navbar
@@ -177,23 +177,60 @@ document.addEventListener('DOMContentLoaded', () => {
   // ═══════════════════════════════════════════════════════════════════
   // Sub-Task 5 — Achievements Carousel (Swiper #logros)
   // ═══════════════════════════════════════════════════════════════════
-  if (document.querySelector('#logros-swiper')) {
-    new Swiper('#logros-swiper', {
+  /* ── Opinion Swiper ────────────────────────────────────────────────── */
+  const opinionSwiperEl = document.querySelector('#opinion-swiper');
+  if (opinionSwiperEl && typeof Swiper !== 'undefined') {
+    const opinionSwiper = new Swiper('#opinion-swiper', {
       loop: true,
+      grabCursor: true,
       slidesPerView: 1,
-      spaceBetween: 24,
-      navigation: {
-        nextEl: '#logros-swiper .swiper-button-next',
-        prevEl: '#logros-swiper .swiper-button-prev',
+      spaceBetween: 20,
+      speed: 450,
+      autoplay: {
+        delay: 6000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      pagination: {
+        el: '.opinion-pagination',
+        clickable: true,
+        dynamicBullets: true,
       },
       breakpoints: {
-        640:  { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
+        580: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        960: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+        1280: {
+          slidesPerView: 4,
+          spaceBetween: 24,
+        },
       },
       a11y: {
-        prevSlideMessage: 'Logro anterior',
-        nextSlideMessage: 'Logro siguiente',
+        prevSlideMessage: 'Artículo anterior',
+        nextSlideMessage: 'Artículo siguiente',
       },
+    });
+
+    // Support both toolbar and floating side buttons
+    document.querySelectorAll('.opinion-btn-prev, .opinion-side-prev').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        opinionSwiper.slidePrev();
+      });
+    });
+
+    document.querySelectorAll('.opinion-btn-next, .opinion-side-next').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        opinionSwiper.slideNext();
+      });
     });
   }
 
@@ -312,4 +349,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
 
-}); // end DOMContentLoaded
+}; // end initApp
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}

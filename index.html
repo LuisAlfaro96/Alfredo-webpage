@@ -50,7 +50,7 @@
   />
 
   <!-- Project styles -->
-  <link rel="stylesheet" href="css/styles.css?v=29" />
+  <link rel="stylesheet" href="css/styles.css?v=35" />
 </head>
 <body class="antialiased">
 
@@ -69,12 +69,12 @@
       <ul class="navbar__links" role="list">
         <li><a href="#sobre-mi"      class="nav-link">Sobre mí</a></li>
         <li><a href="#logros"        class="nav-link">Trayectoria Académica</a></li>
+        <li><a href="#opinion"       class="nav-link">Columnas de Opinión</a></li>
         <li><a href="#propuestas"    class="nav-link">Propuestas</a></li>
         <li><a href="#comunidad"     class="nav-link">Trayectoria de Liderazgo</a></li>
         <li><a href="#apoyo"         class="nav-link">Testimonios y Apoyo</a></li>
         <li><a href="#testimonios"   class="nav-link">Videos e Ideas</a></li>
         <li><a href="#publicaciones" class="nav-link">Publicaciones</a></li>
-        <li><a href="#contacto"      class="nav-link">Contacto</a></li>
       </ul>
 
       <!-- ── Hamburger button (mobile only) ───────────────────────── -->
@@ -95,12 +95,12 @@
       <ul role="list">
         <li><a href="#sobre-mi"      class="nav-link">Sobre mí</a></li>
         <li><a href="#logros"        class="nav-link">Trayectoria Académica</a></li>
+        <li><a href="#opinion"       class="nav-link">Columnas de Opinión</a></li>
         <li><a href="#propuestas"    class="nav-link">Propuestas</a></li>
         <li><a href="#comunidad"     class="nav-link">Trayectoria de Liderazgo</a></li>
         <li><a href="#apoyo"         class="nav-link">Testimonios y Apoyo</a></li>
         <li><a href="#testimonios"   class="nav-link">Videos e Ideas</a></li>
         <li><a href="#publicaciones" class="nav-link">Publicaciones</a></li>
-        <li><a href="#contacto"      class="nav-link">Contacto</a></li>
       </ul>
     </div>
 
@@ -121,18 +121,16 @@
           <div class="about__hero-text">
             <p class="about__label">Candidato a Director</p>
             <h1 class="about__hero-name">Dr. Alfredo Elías<br>Alfaro Ramos</h1>
-            <p class="about__hero-role">Profesor de Economía · ITCR Sede San Carlos</p>
+            <p class="about__hero-role">Catedrático de Economía · Tecnológico de Costa Rica</p>
             <p class="about__hero-bio">
-              Más de 26 años formando profesionales con visión crítica y compromiso regional.
-              Investigador activo, líder académico y candidato a Director del Campus Tecnológico
-              Local de San Carlos.
+              Más de 26 años dedicados a la formación de excelencia, la investigación aplicada y el desarrollo territorial. Compromiso, integridad y visión estratégica para el futuro del Campus Tecnológico Local San Carlos.
             </p>
 
             <!-- Key stats -->
             <div class="about__stats" aria-label="Estadísticas académicas">
               <div class="stat-item">
                 <span class="stat-number" data-target="26" aria-live="polite">0</span>
-                <span class="stat-label">Años de docencia</span>
+                <span class="stat-label">Años de Docencia</span>
               </div>
               <div class="stat-item">
                 <span class="stat-number" data-target="20" aria-live="polite">0</span>
@@ -140,7 +138,7 @@
               </div>
               <div class="stat-item">
                 <span class="stat-number" data-target="5" aria-live="polite">0</span>
-                <span class="stat-label">Proyectos de investigación y extensión</span>
+                <span class="stat-label">Investigación &amp; Extensión</span>
               </div>
               <div class="stat-item">
                 <span class="stat-number" data-target="5" aria-live="polite">0</span>
@@ -148,7 +146,7 @@
               </div>
             </div>
 
-            <a href="#logros" class="about__hero-cta">Ver trayectoria</a>
+            <a href="#logros" class="about__hero-cta">Conocer Trayectoria</a>
           </div>
 
           <!-- ── Right: profile photo ──────────────────────────── -->
@@ -164,99 +162,609 @@
       </div><!-- /.about__container -->
     </section>
 
-    <!-- ── §5.4  Trayectoria Académica ──────────────────────────── -->
+    <!-- ── §5.4  Trayectoria Académica (En formato Grid de Tarjetas) ─ -->
     <section id="logros" class="achievements" aria-label="Trayectoria Académica">
       <div class="container">
 
         <!-- Section header -->
         <header class="achievements__header">
           <p class="section-label">Trayectoria Académica</p>
-          <h2 class="section-title">Honestidad Valor y enseñanza</h2>
+          <h2 class="section-title">Honestidad, Valor y Enseñanza</h2>
           <p class="section-subtitle">
             Una trayectoria marcada por la excelencia docente, la investigación aplicada
-            y el compromiso con la comunidad universitaria.
+            y el compromiso con la comunidad universitaria del ITCR.
           </p>
         </header>
 
-        <!-- Swiper carousel -->
-        <div id="logros-swiper" class="swiper achievements__swiper" aria-label="Carrusel de logros">
-          <div class="swiper-wrapper">
+        <!-- Layout a medida para los 5 Pilares de Trayectoria -->
+        <div class="academic-showcase reveal-group">
 
-            <!-- Card 1 -->
-            <div class="swiper-slide">
-              <article class="achievement-card">
-                <div class="achievement-card__icon" aria-hidden="true">
-                  <i class="fa-solid fa-trophy"></i>
+          <!-- Pilar 1: Lead Card (Docencia y Formación) -->
+          <article class="academic-lead-card reveal">
+            <div class="academic-lead-card__icon-wrap" aria-hidden="true">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <div class="academic-lead-card__body">
+              <div class="academic-lead-card__top">
+                <span class="academic-badge academic-badge--highlight">2000 — 2026</span>
+                <span class="academic-badge">26 Años de Vocación Docente</span>
+              </div>
+              <h3 class="academic-lead-card__title">Formación Académica de Excelencia y Desarrollo Emprendedor</h3>
+              <p class="academic-lead-card__desc">
+                Docente ininterrumpido en el Campus San Carlos formando a múltiples generaciones en economía aplicada, comercio internacional e iniciativa emprendedora, inculcando siempre rigor analítico y sólidos valores éticos.
+              </p>
+              <div class="academic-chips">
+                <span class="academic-chip"><i class="fa-solid fa-chart-line"></i> Microeconomía &amp; Macroeconomía</span>
+                <span class="academic-chip"><i class="fa-solid fa-earth-americas"></i> Negocios Internacionales</span>
+                <span class="academic-chip"><i class="fa-solid fa-lightbulb"></i> Desarrollo de Emprendedores</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Grid de 4 Pilares Complementarios (2x2) -->
+          <div class="academic-grid-4">
+
+            <!-- Pilar 2: Ferias de Negocios -->
+            <article class="academic-sub-card reveal">
+              <div class="academic-sub-card__header">
+                <div class="academic-sub-card__icon" aria-hidden="true">
+                  <i class="fa-solid fa-rocket"></i>
                 </div>
-                <span class="achievement-card__year">2000-2026</span>
-                <h3 class="achievement-card__title">Docente universitario</h3>
-                <p class="achievement-card__desc">
-                  Profesor de los cursos Microeconomía, Macroeconomía, Negocios Internacionales, Desarrollo de Emprendedores
+                <span class="academic-sub-card__year">2000 — 2026</span>
+              </div>
+              <h3 class="academic-sub-card__title">Organización de Ferias Regionales de Negocios</h3>
+              <p class="academic-sub-card__desc">
+                Organizador y mentor en las ferias regionales de ideas de negocios en el Campus San Carlos, proyectando el talento emprendedor local a la competencia nacional en Cartago.
+              </p>
+            </article>
+
+            <!-- Pilar 3: Extensión con Excelencia -->
+            <article class="academic-sub-card reveal">
+              <div class="academic-sub-card__header">
+                <div class="academic-sub-card__icon" aria-hidden="true">
+                  <i class="fa-solid fa-seedling"></i>
+                </div>
+                <span class="academic-sub-card__year">2015 — 2019</span>
+              </div>
+              <h3 class="academic-sub-card__title">Extensionista de Proyecto Sobresaliente</h3>
+              <p class="academic-sub-card__desc">
+                Extensionista en el proyecto <em>"Red de colaboración en horticultura protegida de la Región Huetar Norte"</em>, evaluado con calificación de excelencia sobresaliente (89.59).
+              </p>
+            </article>
+
+            <!-- Pilar 4: Coordinador e Investigador Principal -->
+            <article class="academic-sub-card reveal">
+              <div class="academic-sub-card__header">
+                <div class="academic-sub-card__icon" aria-hidden="true">
+                  <i class="fa-solid fa-microscope"></i>
+                </div>
+                <span class="academic-sub-card__year">2023 — 2025</span>
+              </div>
+              <h3 class="academic-sub-card__title">Investigación en Clúster de Dispositivos Médicos</h3>
+              <p class="academic-sub-card__desc">
+                Coordinador e investigador del proyecto sobre el impacto del agrupamiento empresarial en la innovación y competitividad del sector de dispositivos médicos en Costa Rica.
+              </p>
+            </article>
+
+            <!-- Pilar 5: Investigación Aplicada CAMTIC e Industria -->
+            <article class="academic-sub-card reveal">
+              <div class="academic-sub-card__header">
+                <div class="academic-sub-card__icon" aria-hidden="true">
+                  <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <span class="academic-sub-card__year">2026</span>
+              </div>
+              <h3 class="academic-sub-card__title">Innovación, Software e Industria Nacional</h3>
+              <p class="academic-sub-card__desc">
+                Investigaciones sobre capital intelectual e innovación de producto en empresas de software/datos (CAMTIC) y ambidestreza organizacional en la industria manufacturera del país.
+              </p>
+            </article>
+
+          </div><!-- /.academic-grid-4 -->
+
+        </div><!-- /.academic-showcase -->
+
+      </div><!-- /.container -->
+    </section>
+
+    <!-- ── §5.5  Presencia en Medios — Columnas de Opinión ── -->
+    <section id="opinion" class="opinion-section" aria-label="Artículos de opinión y columnas en medios">
+      <div class="container">
+
+        <!-- Section header -->
+        <div class="section-header opinion__header">
+          <span class="section-label">Tribuna de Opinión y Análisis Económico</span>
+          <h2 class="section-title">Presencia en Medios Nacionales</h2>
+          <p class="section-subtitle">
+            Análisis económico, competitividad, política pública y desarrollo regional publicados por el Dr. Alfredo Elías Alfaro Ramos en los diarios de mayor impacto y prestigio de Costa Rica e Iberoamérica.
+          </p>
+
+          <!-- Media Outlets Press Strip -->
+          <div class="opinion-outlets-strip">
+            <span class="opinion-outlet-chip outlet-lanacion">
+              <i class="fa-solid fa-newspaper"></i> La Nación
+            </span>
+            <span class="opinion-outlet-chip outlet-larepublica">
+              <i class="fa-solid fa-newspaper"></i> La República
+            </span>
+            <span class="opinion-outlet-chip outlet-elfinanciero">
+              <i class="fa-solid fa-chart-line"></i> El Financiero
+            </span>
+            <span class="opinion-outlet-chip outlet-myt">
+              <i class="fa-solid fa-earth-americas"></i> Mercados &amp; Tendencias
+            </span>
+            <span class="opinion-outlet-chip outlet-tec">
+              <i class="fa-solid fa-building-columns"></i> TEC &amp; Revistas Indexadas
+            </span>
+          </div>
+        </div>
+
+        <!-- Carousel Toolbar (Counter & Navigation Buttons) -->
+        <div class="opinion__toolbar">
+          <div class="opinion__count-pill">
+            <i class="fa-solid fa-layer-group"></i> Mostrando 18 Artículos y Columnas
+          </div>
+          <div class="opinion__controls">
+            <button type="button" class="opinion-ctrl-btn opinion-btn-prev" aria-label="Artículo anterior" title="Artículo anterior">
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+              <span>Anterior</span>
+            </button>
+            <button type="button" class="opinion-ctrl-btn opinion-btn-next" aria-label="Artículo siguiente" title="Artículo siguiente">
+              <span>Siguiente</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Carousel / Swiper container -->
+        <div class="opinion__carousel-container">
+          <div id="opinion-swiper" class="swiper opinion__swiper" aria-label="Carrusel de columnas de opinión">
+            <div class="swiper-wrapper">
+
+            <!-- ══════════════════════════════════════════════════════════
+                 GRUPO 1: LA NACIÓN (4 Artículos)
+            ═══════════════════════════════════════════════════════════ -->
+
+            <!-- Slide 1: La Nación -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-lanacion">
+                    <i class="fa-solid fa-newspaper"></i> La Nación
+                  </span>
+                  <span class="opinion-card__tag">Estrategia</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://www.nacion.com/opinion/foros/a-proposito-de-intel/S4CECALMSFHMJKQDH3URMOT7EQ/story/" target="_blank" rel="noopener noreferrer">
+                    A propósito de Intel
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Evaluación de la atracción de inversión extranjera directa y la transición hacia servicios de alto valor agregado.
                 </p>
+                <a href="https://www.nacion.com/opinion/foros/a-proposito-de-intel/S4CECALMSFHMJKQDH3URMOT7EQ/story/" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
               </article>
             </div>
 
-            <!-- Card 2 -->
+            <!-- Slide 2: La Nación -->
             <div class="swiper-slide">
-              <article class="achievement-card">
-                <div class="achievement-card__icon" aria-hidden="true">
-                  <i class="fa-solid fa-book-open"></i>
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-lanacion">
+                    <i class="fa-solid fa-newspaper"></i> La Nación
+                  </span>
+                  <span class="opinion-card__tag">Educación</span>
                 </div>
-                <span class="achievement-card__year">2000-2026</span>
-                <h3 class="achievement-card__title">Encargada de organizar feria de ideas de negocios</h3>
-                <p class="achievement-card__desc">
-                    Encargado de organizar las ferias de ideas de negocios regionales en el Campus del TEC San Carlos para que los ganadores vayan a competir a la feria de ideas de negocios a nivel nacional en Cartago.
+                <h3 class="opinion-card__title">
+                  <a href="https://www.nacion.com/opinion/foros/salarios-competitivos-en-las-universidades/7QJ4KPRH65EN3LZXANEX5I7ZLI/story/" target="_blank" rel="noopener noreferrer">
+                    Salarios competitivos en las universidades
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Defensa de la calidad académica, retención del talento docente y sostenibilidad de las universidades públicas.
                 </p>
+                <a href="https://www.nacion.com/opinion/foros/salarios-competitivos-en-las-universidades/7QJ4KPRH65EN3LZXANEX5I7ZLI/story/" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
               </article>
             </div>
 
-            <!-- Card 3 -->
+            <!-- Slide 3: La Nación -->
             <div class="swiper-slide">
-              <article class="achievement-card">
-                <div class="achievement-card__icon" aria-hidden="true">
-                  <i class="fa-solid fa-flask"></i>
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-lanacion">
+                    <i class="fa-solid fa-newspaper"></i> La Nación
+                  </span>
+                  <span class="opinion-card__tag">Comercio</span>
                 </div>
-                <span class="achievement-card__year">2015-2019</span>
-                <h3 class="achievement-card__title">Extensionista de proyecto</h3>
-                <p class="achievement-card__desc">
-                    Extensionista de proyecto de extensión: “Red de colaboración en horticultura protegida de la Región Huetar Norte ", con una nota de 89.59.
+                <h3 class="opinion-card__title">
+                  <a href="https://www.nacion.com/opinion/foros/ya-no-es-negocio-exportar-materias-primas/5YRUE76355DL5K6BFE7IBJTIVM/story/" target="_blank" rel="noopener noreferrer">
+                    Ya no es negocio exportar materias primas
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Argumentación sobre la urgencia de transitar hacia productos con alto valor agregado e innovación agroindustrial.
                 </p>
+                <a href="https://www.nacion.com/opinion/foros/ya-no-es-negocio-exportar-materias-primas/5YRUE76355DL5K6BFE7IBJTIVM/story/" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
               </article>
             </div>
 
-            <!-- Card 4 -->
+            <!-- Slide 4: La Nación -->
             <div class="swiper-slide">
-              <article class="achievement-card">
-                <div class="achievement-card__icon" aria-hidden="true">
-                  <i class="fa-solid fa-graduation-cap"></i>
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-lanacion">
+                    <i class="fa-solid fa-newspaper"></i> La Nación
+                  </span>
+                  <span class="opinion-card__tag">Política</span>
                 </div>
-                <span class="achievement-card__year">2023-2025</span>
-                <h3 class="achievement-card__title">Coordinador de proyecto de investigación e investigador del proyecto de investigación</h3>
-                <p class="achievement-card__desc">
-                    El impacto del agrupamiento en la innovación y la competitividad del clúster de dispositivos médicos de Costa Rica”, todavía esta pendiente la calificación.
-                </p>  
-              </article>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="swiper-slide">
-              <article class="achievement-card">
-                <div class="achievement-card__icon" aria-hidden="true">
-                  <i class="fa-solid fa-earth-americas"></i>
-                </div>
-                <span class="achievement-card__year">2026</span>
-                <h3 class="achievement-card__title">Proyecto de Investigacion l</h3>
-                <p class="achievement-card__desc">
-                   La relación del capital intelectual con la innovación de producto de las empresas de desarrolladoras de software y análisis de datos de la cámara de tecnologías de información y comunicación de Costa Rica y Ambidestreza organizacional y emprendimiento corporativo y su impacto en el desempeño innovador en la industria manufacturera de Costa Rica.
+                <h3 class="opinion-card__title">
+                  <a href="https://www.nacion.com/opinion/foros/inconveniente-proteccionismo/7LHYZ4KPARFYDMYHLWWHFM7VPY/story/" target="_blank" rel="noopener noreferrer">
+                    Inconveniente proteccionismo
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Crítica a las barreras arancelarias que encarecen el costo de vida y reducen la competitividad nacional.
                 </p>
+                <a href="https://www.nacion.com/opinion/foros/inconveniente-proteccionismo/7LHYZ4KPARFYDMYHLWWHFM7VPY/story/" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
               </article>
             </div>
+
+            <!-- ══════════════════════════════════════════════════════════
+                 GRUPO 2: LA REPÚBLICA (4 Artículos)
+            ═══════════════════════════════════════════════════════════ -->
+
+            <!-- Slide 5: La República -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-larepublica">
+                    <i class="fa-solid fa-newspaper"></i> La República
+                  </span>
+                  <span class="opinion-card__tag">Columna</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://www.larepublica.net/noticia/_empresas_publicas_vs_privadas" target="_blank" rel="noopener noreferrer">
+                    Empresas públicas vs. privadas
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Reflexión crítica sobre el rol, eficiencia y complementariedad entre el sector público y el sector privado en el desarrollo económico.
+                </p>
+                <a href="https://www.larepublica.net/noticia/_empresas_publicas_vs_privadas" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- Slide 6: La República -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-larepublica">
+                    <i class="fa-solid fa-newspaper"></i> La República
+                  </span>
+                  <span class="opinion-card__tag">Fiscal</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://www.larepublica.net/noticia/un_suicidio_colectivo" target="_blank" rel="noopener noreferrer">
+                    Un suicidio colectivo
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Advertencia sobre las consecuencias del déficit fiscal acumulado y el riesgo sobre el estado de bienestar.
+                </p>
+                <a href="https://www.larepublica.net/noticia/un_suicidio_colectivo" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- Slide 7: La República -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-larepublica">
+                    <i class="fa-solid fa-newspaper"></i> La República
+                  </span>
+                  <span class="opinion-card__tag">Estructura</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://www.larepublica.net/noticia/cambio_en_la_estructura_productiva_del_pais_" target="_blank" rel="noopener noreferrer">
+                    Cambio en la estructura productiva del país
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Diagnóstico sobre la transformación del modelo tradicional hacia la economía del conocimiento y manufactura avanzada.
+                </p>
+                <a href="https://www.larepublica.net/noticia/cambio_en_la_estructura_productiva_del_pais_" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- Slide 8: La República -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-larepublica">
+                    <i class="fa-solid fa-newspaper"></i> La República
+                  </span>
+                  <span class="opinion-card__tag">Reactivación</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://www.larepublica.net/noticia/algunas-ideas-economicas-para-soportar-la-recesion-economica" target="_blank" rel="noopener noreferrer">
+                    Algunas ideas económicas para soportar la recesión
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Medidas prácticas y propuestas de política pública para mitigar crisis económicas y salvaguardar el empleo.
+                </p>
+                <a href="https://www.larepublica.net/noticia/algunas-ideas-economicas-para-soportar-la-recesion-economica" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- ══════════════════════════════════════════════════════════
+                 GRUPO 3: EL FINANCIERO (2 Artículos)
+            ═══════════════════════════════════════════════════════════ -->
+
+            <!-- Slide 9: El Financiero -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-elfinanciero">
+                    <i class="fa-solid fa-newspaper"></i> El Financiero
+                  </span>
+                  <span class="opinion-card__tag">Modelos</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://www.elfinancierocr.com/opinion/del-capitalismo-empresarial-al-capitalismo-colaborativo/WLU4FM7DHFGCPKY6CLTU7QHN4Q/story/#link_time=1505869267" target="_blank" rel="noopener noreferrer">
+                    Del capitalismo empresarial al capitalismo colaborativo
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Evolución de las plataformas digitales, economía colaborativa y nuevos paradigmas de gestión del capital social.
+                </p>
+                <a href="https://www.elfinancierocr.com/opinion/del-capitalismo-empresarial-al-capitalismo-colaborativo/WLU4FM7DHFGCPKY6CLTU7QHN4Q/story/#link_time=1505869267" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- Slide 10: El Financiero -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-elfinanciero">
+                    <i class="fa-solid fa-newspaper"></i> El Financiero
+                  </span>
+                  <span class="opinion-card__tag">Economía</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://www.elfinancierocr.com/opinion/la-crisis-fiscal-resta-competitividad/GNPLUAL2NBHQVL5UIWYLMZEQOY/story/" target="_blank" rel="noopener noreferrer">
+                    La crisis fiscal resta competitividad
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Impacto del endeudamiento público en las tasas de interés, el crédito productivo y el clima de negocios.
+                </p>
+                <a href="https://www.elfinancierocr.com/opinion/la-crisis-fiscal-resta-competitividad/GNPLUAL2NBHQVL5UIWYLMZEQOY/story/" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- ══════════════════════════════════════════════════════════
+                 GRUPO 4: REVISTAS Y OTROS MEDIOS (8 Artículos)
+            ═══════════════════════════════════════════════════════════ -->
+
+            <!-- Slide 11: Mercados & Tendencias -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-myt">
+                    <i class="fa-solid fa-chart-pie"></i> Mercados &amp; Tendencias
+                  </span>
+                  <span class="opinion-card__tag">Finanzas</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://www.myt.connectab2b.com/los-fondos-buitre-en-argentina" target="_blank" rel="noopener noreferrer">
+                    Los fondos buitre en Argentina
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Análisis sobre la reestructuración de deuda soberana, litigios financieros y las implicaciones para la estabilidad económica regional.
+                </p>
+                <a href="https://www.myt.connectab2b.com/los-fondos-buitre-en-argentina" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- Slide 12: Mercados & Tendencias -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-myt">
+                    <i class="fa-solid fa-arrow-trend-up"></i> Mercados &amp; Tendencias
+                  </span>
+                  <span class="opinion-card__tag">Desarrollo</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://www.myt.connectab2b.com/el-milagro-de-vietnam" target="_blank" rel="noopener noreferrer">
+                    El milagro de Vietnam
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Lecciones de crecimiento económico acelerado, apertura comercial y políticas de industrialización.
+                </p>
+                <a href="https://www.myt.connectab2b.com/el-milagro-de-vietnam" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- Slide 13: Mercados & Tendencias -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-myt">
+                    <i class="fa-solid fa-coins"></i> Mercados &amp; Tendencias
+                  </span>
+                  <span class="opinion-card__tag">Economía</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://www.myt.connectab2b.com/el-tipo-de-cambio-del-que-se-habla" target="_blank" rel="noopener noreferrer">
+                    El tipo de cambio del que se habla
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Perspectiva económica sobre la volatilidad cambiaria, política monetaria y el efecto en exportadores y consumidores.
+                </p>
+                <a href="https://www.myt.connectab2b.com/el-tipo-de-cambio-del-que-se-habla" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- Slide 14: Mercados & Tendencias -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-myt">
+                    <i class="fa-solid fa-chart-line"></i> Mercados &amp; Tendencias
+                  </span>
+                  <span class="opinion-card__tag">Global</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://www.myt.connectab2b.com/el-fantasma-de-la-deflacion-en-la-zona-euro" target="_blank" rel="noopener noreferrer">
+                    El fantasma de la deflación en la zona euro
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Análisis sobre las presiones deflacionarias europeas, tipos de interés del BCE y repercusiones en el comercio.
+                </p>
+                <a href="https://www.myt.connectab2b.com/el-fantasma-de-la-deflacion-en-la-zona-euro" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- Slide 15: TEC Empresarial -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-tec">
+                    <i class="fa-solid fa-building-columns"></i> TEC Empresarial
+                  </span>
+                  <span class="opinion-card__tag">Innovación</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://revistas.tec.ac.cr/index.php/tec_empresarial/article/view/6168" target="_blank" rel="noopener noreferrer">
+                    Knowledge management and intellectual capital in manufacturing
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Estudio sobre la gestión del conocimiento y capital humano como inductores de ventajas competitivas en el sector manufacturero.
+                </p>
+                <a href="https://revistas.tec.ac.cr/index.php/tec_empresarial/article/view/6168" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- Slide 16: Tecnología en Marcha -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-tec">
+                    <i class="fa-solid fa-seedling"></i> Tecnología en Marcha
+                  </span>
+                  <span class="opinion-card__tag">Agroindustria</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://revistas.tec.ac.cr/index.php/tec_marcha/article/view/6377" target="_blank" rel="noopener noreferrer">
+                    Rentabilidad en horticultura protegida (Región Huetar Norte)
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Evaluación económica y técnica de modelos productivos sostenibles de horticultura protegida para productores de la Zona Norte.
+                </p>
+                <a href="https://revistas.tec.ac.cr/index.php/tec_marcha/article/view/6377" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- Slide 17: RNA (UNED) -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-uned">
+                    <i class="fa-solid fa-book-bookmark"></i> RNA (UNED)
+                  </span>
+                  <span class="opinion-card__tag">Investigación</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://revistas.uned.ac.cr/index.php/rna/es/article/view/4233" target="_blank" rel="noopener noreferrer">
+                    Inductores de la innovación: Observaciones teóricas y empíricas
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Examen conceptual y empírico sobre los factores detonantes de la innovación en modelos empresariales y organizacionales.
+                </p>
+                <a href="https://revistas.uned.ac.cr/index.php/rna/es/article/view/4233" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
+            <!-- Slide 18: RAN (Chile) -->
+            <div class="swiper-slide">
+              <article class="opinion-card">
+                <div class="opinion-card__header">
+                  <span class="opinion-card__source source-ran">
+                    <i class="fa-solid fa-globe"></i> RAN (Chile)
+                  </span>
+                  <span class="opinion-card__tag">PYMES</span>
+                </div>
+                <h3 class="opinion-card__title">
+                  <a href="https://revistas.udec.cl/index.php/ran/article/view/11425/12036" target="_blank" rel="noopener noreferrer">
+                    Marketing Digital para la Internacionalización en las PYMES
+                  </a>
+                </h3>
+                <p class="opinion-card__summary">
+                  Revisión sistemática sobre cómo la adopción de canales digitales impulsa la competitividad exportadora de las PYMES.
+                </p>
+                <a href="https://revistas.udec.cl/index.php/ran/article/view/11425/12036" target="_blank" rel="noopener noreferrer" class="opinion-card__link">
+                  Leer artículo <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </article>
+            </div>
+
           </div><!-- /.swiper-wrapper -->
 
-          <!-- Navigation arrows -->
-          <button class="swiper-button-prev" aria-label="Logro anterior"></button>
-          <button class="swiper-button-next" aria-label="Logro siguiente"></button>
-        </div><!-- /#logros-swiper -->
+          <!-- Pagination dots -->
+          <div class="swiper-pagination opinion-pagination"></div>
+        </div><!-- /#opinion-swiper -->
+
+        <!-- Floating Side Navigation Buttons -->
+        <button type="button" class="opinion-side-btn opinion-side-prev" aria-label="Artículo anterior" title="Artículo anterior">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="opinion-side-btn opinion-side-next" aria-label="Artículo siguiente" title="Artículo siguiente">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div><!-- /.opinion__carousel-container -->
 
       </div><!-- /.container -->
     </section>
@@ -471,10 +979,20 @@
           <article class="timeline-item reveal">
             <span class="timeline-item__dot" aria-hidden="true"></span>
             <div class="timeline-item__card">
-              <p class="timeline-item__year">2023</p>
-              <h3 class="timeline-item__title">Taller de Educación Financiera</h3>
-              <p class="timeline-item__org">Municipalidad de San Carlos</p>
-              <p class="timeline-item__desc">Impartición de talleres de finanzas personales para pequeños empresarios de la zona.</p>
+              <p class="timeline-item__year">2025</p>
+              <h3 class="timeline-item__title">Coordinador e Investigador Principal</h3>
+              <p class="timeline-item__org">Región Huetar Norte de Costa Rica</p>
+              <p class="timeline-item__desc">Investigación aplicada sobre el impacto de la gestión del conocimiento en la innovación del modelo de negocio de empresas del sector hotelero en la Región Huetar Norte.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <span class="timeline-item__dot" aria-hidden="true"></span>
+            <div class="timeline-item__card">
+              <p class="timeline-item__year">2024</p>
+              <h3 class="timeline-item__title">Competitividad del Clúster de Dispositivos Médicos</h3>
+              <p class="timeline-item__org">Instituto Tecnológico de Costa Rica</p>
+              <p class="timeline-item__desc">Estudio sobre el impacto del agrupamiento empresarial en la innovación y competitividad internacional del clúster de dispositivos médicos en Costa Rica.</p>
             </div>
           </article>
 
@@ -484,7 +1002,7 @@
               <p class="timeline-item__year">2022</p>
               <h3 class="timeline-item__title">Asesoría Económica a Cooperativas</h3>
               <p class="timeline-item__org">COOPELESCA R.L.</p>
-              <p class="timeline-item__desc">Consultoría sobre estrategias de desarrollo económico local sostenible.</p>
+              <p class="timeline-item__desc">Consultoría y asesoramiento estratégico sobre desarrollo económico local, sostenibilidad energética y competitividad cooperativa.</p>
             </div>
           </article>
 
@@ -492,9 +1010,9 @@
             <span class="timeline-item__dot" aria-hidden="true"></span>
             <div class="timeline-item__card">
               <p class="timeline-item__year">2019</p>
-              <h3 class="timeline-item__title">Presiedente Del Consejo Directivo del Colegio de Ciencias Economicas</h3>
-              <p class="timeline-item__org">Sede Regional Huetar Norte</p>
-              <p class="timeline-item__desc">Coordinación y gestion de proyectos para el beneficio de la sede huetar norte.</p>
+              <h3 class="timeline-item__title">Presidente del Consejo Directivo</h3>
+              <p class="timeline-item__org">Colegio de Ciencias Económicas de Costa Rica (Filial Huetar Norte)</p>
+              <p class="timeline-item__desc">Liderazgo y coordinación de iniciativas gremiales, actualización profesional y articulación con los sectores productivos de la Zona Norte.</p>
             </div>
           </article>
 
@@ -502,9 +1020,9 @@
             <span class="timeline-item__dot" aria-hidden="true"></span>
             <div class="timeline-item__card">
               <p class="timeline-item__year">2014</p>
-              <h3 class="timeline-item__title">Vocal 1 del Colegio de Ciencias Económicas de Costa Rica</h3>
-              <p class="timeline-item__org">Sede Regional Huetar Norte</p>
-              <p class="timeline-item__desc">Contribuciones activa en distintos proyectos para el beneficio de la sede huetar norte.  </p>
+              <h3 class="timeline-item__title">Vocal 1 de Junta Directiva</h3>
+              <p class="timeline-item__org">Colegio de Ciencias Económicas de Costa Rica (Filial Huetar Norte)</p>
+              <p class="timeline-item__desc">Participación activa en el diseño e impulso de proyectos estratégicos para el fortalecimiento de la comunidad profesional en la Región Huetar Norte.</p>
             </div>
           </article>
 
@@ -513,8 +1031,8 @@
             <div class="timeline-item__card">
               <p class="timeline-item__year">2008</p>
               <h3 class="timeline-item__title">Fiscal de Junta Directiva</h3>
-              <p class="timeline-item__org">INA ASEMINA</p>
-              <p class="timeline-item__desc">Fiscal de la Junta Directiva de la Asociación Solidarista de Empleado del INA ASEMINA..</p>
+              <p class="timeline-item__org">Asociación Solidarista de Empleados del INA (ASEMINA)</p>
+              <p class="timeline-item__desc">Fiscalización de la gestión patrimonial, transparencia financiera y promoción del bienestar de las personas asociadas.</p>
             </div>
           </article>
         </div>
@@ -708,7 +1226,7 @@
 
         <!-- ── Note ── -->
         <p class="testimonios__note">
-          ¿Deseas conocer más iniciativas y proyectos? <a href="#contacto" class="testimonios__note-link">Contáctanos aquí.</a>
+          ¿Deseas profundizar en las iniciativas y visión de futuro? <a href="#propuestas" class="testimonios__note-link">Explora la propuesta de dirección</a> o consulta las <a href="#publicaciones" class="testimonios__note-link">publicaciones académicas</a>.
         </p>
 
       </div><!-- /.container -->
@@ -831,147 +1349,6 @@
       </div><!-- /.container -->
     </section>
 
-    <!-- ── §5.10 Contacto ───────────────────────────────────────── -->
-    <section id="contacto" class="contact" aria-label="Contacto">
-      <div class="container">
-
-        <!-- Section header -->
-        <div class="section-header contact__header">
-          <span class="section-label">Contacto</span>
-          <h2>Ponte en Contacto</h2>
-          <p class="section-subtitle">
-            Estoy disponible para consultas, colaboraciones académicas y propuestas
-            de la comunidad universitaria del Campus San Carlos.
-          </p>
-        </div>
-
-        <!-- Two-column grid -->
-        <div class="contact__grid reveal">
-
-          <!-- ── Left column: Contact info ──────────────────────── -->
-          <div class="contact-info">
-            <p class="contact-info__name">Dr. Alfredo Elías Alfaro Ramos</p>
-            <p class="contact-info__role">Profesor de Economía</p>
-
-            <ul class="contact-info__list">
-              <li class="contact-info__item">
-                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                <a href="mailto:alfaro.alfredo@itcr.ac.cr" class="contact-info__link">
-                  alfaro.alfredo@itcr.ac.cr
-                </a>
-              </li>
-              <li class="contact-info__item">
-                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                <span>Campus Tecnológico Local de San Carlos, ITCR,<br>Sede San Carlos, Ciudad Quesada</span>
-              </li>
-              <li class="contact-info__item">
-                <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                <a href="tel:+50624010000" class="contact-info__link">+506 2401-0000</a>
-              </li>
-            </ul>
-
-            <!-- Social links -->
-            <div class="social-links" aria-label="Redes sociales y perfiles académicos">
-              <a
-                href="https://linkedin.com"
-                class="social-link"
-                aria-label="LinkedIn"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a
-                href="https://researchgate.net"
-                class="social-link"
-                aria-label="ResearchGate"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i class="fa-brands fa-researchgate" aria-hidden="true"></i>
-              </a>
-              <a
-                href="https://orcid.org"
-                class="social-link"
-                aria-label="ORCID"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i class="fa-brands fa-orcid" aria-hidden="true"></i>
-              </a>
-            </div>
-
-            <p class="contact-info__note">
-              Candidato a Director del Campus Tecnológico Local de San Carlos
-            </p>
-          </div><!-- /.contact-info -->
-
-          <!-- ── Right column: Contact form ─────────────────────── -->
-          <div class="contact-form-wrapper">
-            <form
-              id="contact-form"
-              class="contact-form"
-              action="https://formspree.io/f/REPLACE_THIS"
-              method="POST"
-              novalidate
-            >
-              <!-- Honeypot anti-spam field -->
-              <input
-                type="text"
-                name="_gotcha"
-                style="display:none"
-                tabindex="-1"
-                autocomplete="off"
-              />
-
-              <div class="form-group">
-                <label for="contact-name">Nombre completo</label>
-                <input
-                  type="text"
-                  id="contact-name"
-                  name="name"
-                  placeholder="Su nombre"
-                  required
-                  autocomplete="name"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="contact-email">Correo electrónico</label>
-                <input
-                  type="email"
-                  id="contact-email"
-                  name="email"
-                  placeholder="correo@ejemplo.com"
-                  required
-                  autocomplete="email"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="contact-message">Mensaje</label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  rows="5"
-                  placeholder="Escriba su mensaje aquí…"
-                  required
-                ></textarea>
-              </div>
-
-              <button type="submit" class="contact-form__submit">
-                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-                Enviar mensaje
-              </button>
-
-              <div id="form-status" role="alert" aria-live="polite"></div>
-            </form>
-          </div><!-- /.contact-form-wrapper -->
-
-        </div><!-- /.contact__grid -->
-
-      </div><!-- /.container -->
-    </section>
 
   </main>
 
@@ -980,8 +1357,7 @@
   ════════════════════════════════════════════════════════════════════ -->
   <footer class="footer" aria-label="Pie de página">
     <div class="container">
-      <p>© 2024 Dr. Alfredo Elías Alfaro Ramos — Todos los derechos reservados</p>
-      <p>Instituto Tecnológico de Costa Rica — Sede San Carlos | Ciudad Quesada, Alajuela</p>
+      <p>© 2026 Dr. Alfredo Elías Alfaro Ramos — Candidatura a la Dirección del Campus Tecnológico Local San Carlos (ITCR)</p>
     </div>
   </footer>
 
@@ -992,6 +1368,6 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- Project scripts -->
-  <script src="js/main.js" type="module"></script>
+  <script src="js/main.js?v=35" type="module"></script>
 </body>
 </html>
