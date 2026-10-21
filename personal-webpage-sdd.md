@@ -4,7 +4,7 @@
 **Candidate:** Dr. Alfredo Elías Alfaro Ramos  
 **Position:** Profesor de Economía — Instituto Tecnológico de Costa Rica, Sede San Carlos  
 **Election:** Director del Campus Tecnológico Local de San Carlos  
-**Document version:** 1.0  
+**Document version:** 1.1 (color palette updated — see `sdd-color-palette-update.md`)
 **UI Language:** Spanish (Costa Rican)
 
 ---
@@ -22,7 +22,7 @@ The site must convey credibility, professionalism, and community commitment to t
 - Nine content sections (in Spanish): Inicio, Sobre mí, Logros, Investigación, Docencia, Trabajo Comunal, Publicaciones, Premios, Contacto.
 - Fixed top navigation bar with logo (left) and section links (right).
 - Carousels / sliders in at least two sections (Hero banner and Achievements / Awards).
-- White and blue color palette.
+- Blue and light-yellow palette (blue primary, yellow decorative).
 - No back-end required at launch; contact form uses a third-party form service (Formspree).
 
 ### 1.4 Non-Goals
@@ -56,11 +56,12 @@ The site must convey credibility, professionalism, and community commitment to t
 
 | Token | Hex | Usage |
 |---|---|---|
-| `--color-primary` | `#003DA5` | Primary blue — navbar, headings, buttons |
-| `--color-primary-light` | `#1A56DB` | Hover states, active nav link |
-| `--color-accent` | `#0EA5E9` | Section dividers, icons, highlights |
+| `--color-primary` | `#007CBB` | Azul intenso (official) — buttons, headings, links, icons, focus rings |
+| `--color-primary-dark` | `#005D8C` | Hover/active states, gradient end, small text on tinted backgrounds |
+| `--color-navy` | `#003E5E` | Footer, dark hero slide, photo overlays |
+| `--color-accent` | `#EBEB77` | Amarillo claro (official) — decorative only (lines, borders, highlights on dark sections) |
 | `--color-bg` | `#FFFFFF` | Default section background |
-| `--color-bg-alt` | `#F0F6FF` | Alternating section background |
+| `--color-bg-alt` | `#F0F7FB` | Alternating section background |
 | `--color-text` | `#1E293B` | Body text |
 | `--color-text-muted` | `#64748B` | Captions, labels |
 | `--color-white` | `#FFFFFF` | Text on dark/blue backgrounds |

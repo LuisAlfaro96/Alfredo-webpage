@@ -10,13 +10,14 @@
 ──────────────────────────────────────────────────────────────────────── */
 :root {
   /* Brand palette */
-  --color-primary:        #003DA5; /* Primary blue — navbar, headings, buttons */
-  --color-primary-light:  #1A56DB; /* Hover states, active nav link            */
-  --color-accent:         #0EA5E9; /* Section dividers, icons, highlights       */
+  --color-primary:        #007CBB; /* Azul intenso (official) — buttons, headings, links, icons */
+  --color-primary-dark:   #005D8C; /* 75% of primary — hover/active, gradient end, small text   */
+  --color-navy:           #003E5E; /* 50% of primary — footer, dark hero slide, overlays        */
+  --color-accent:         #EBEB77; /* Amarillo claro (official) — decorative only               */
 
   /* Backgrounds */
   --color-bg:             #FFFFFF; /* Default section background                */
-  --color-bg-alt:         #F0F6FF; /* Alternating section background            */
+  --color-bg-alt:         #F0F7FB; /* Alternating section background (6% primary tint) */
 
   /* Borders */
   --color-border:         #e5e7eb; /* Subtle dividers, accordion borders        */
@@ -27,7 +28,7 @@
   --color-white:          #FFFFFF; /* Text on dark / blue backgrounds           */
 
   /* Footer */
-  --color-footer-bg:      #001D6C; /* Dark navy footer background               */
+  --color-footer-bg:      var(--color-navy); /* Dark navy footer background     */
 }
 
 /* ───────────────────────────────────────────────────────────────────────
@@ -103,7 +104,7 @@ h3 { font-size: var(--text-h3);  font-weight: var(--weight-semibold); }
 
 /* Links */
 a {
-  color: var(--color-primary-light);
+  color: var(--color-primary-dark);
   text-decoration: none;
 }
 a:hover,
@@ -125,8 +126,22 @@ ul, ol {
 
 /* Focus outline — ensure keyboard accessibility */
 :focus-visible {
-  outline: 3px solid var(--color-accent);
+  outline: 3px solid var(--color-primary);
   outline-offset: 3px;
+}
+
+/* Yellow focus ring on dark sections, where blue would lose contrast */
+.hero :focus-visible,
+.testimonios :focus-visible,
+.contact :focus-visible,
+.apoyo__cta-box :focus-visible,
+.footer :focus-visible {
+  outline-color: var(--color-accent);
+}
+
+/* Sobre mí: no yellow — white focus ring */
+.about :focus-visible {
+  outline-color: var(--color-white);
 }
 
 /* ───────────────────────────────────────────────────────────────────────
@@ -178,7 +193,7 @@ ul, ol {
 }
 .navbar__logo:hover,
 .navbar__logo:focus-visible {
-  color: var(--color-primary-light);
+  color: var(--color-primary-dark);
   text-decoration: none;
 }
 
@@ -212,14 +227,14 @@ ul, ol {
   right: 0.6rem;
   bottom: 0;
   height: 2px;
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-dark);
   transform: scaleX(0);
   transition: transform 0.2s ease;
   transform-origin: left;
 }
 .nav-link:hover,
 .nav-link:focus-visible {
-  color: var(--color-primary-light);
+  color: var(--color-primary-dark);
   text-decoration: none;
 }
 .nav-link:hover::after,
@@ -229,7 +244,7 @@ ul, ol {
 
 /* ── Active nav link (set by scroll-spy) ────────────────────────────── */
 .nav-link.active {
-  color: var(--color-primary-light);
+  color: var(--color-primary-dark);
 }
 .nav-link.active::after {
   transform: scaleX(1);
@@ -250,7 +265,7 @@ ul, ol {
 }
 .navbar__hamburger:hover,
 .navbar__hamburger:focus-visible {
-  color: var(--color-primary-light);
+  color: var(--color-primary-dark);
 }
 
 /* ── Mobile slide-down drawer ────────────────────────────────────────── */
@@ -298,9 +313,9 @@ ul, ol {
 }
 
 /* ── Per-slide background colours ────────────────────────────────────── */
-.hero__slide--1 { background-color: #003DA5; }
-.hero__slide--2 { background-color: #1A3A6B; }
-.hero__slide--3 { background-color: #0A2744; }
+.hero__slide--1 { background-color: var(--color-primary); }
+.hero__slide--2 { background-color: var(--color-primary-dark); }
+.hero__slide--3 { background-color: var(--color-navy); }
 
 /* ── Slide background image (used via <img> so Swiper clones it too) ─── */
 .hero__slide-bg-img {
@@ -327,8 +342,8 @@ ul, ol {
   z-index: 1;
   background: linear-gradient(
     135deg,
-    rgba(0, 61, 165, 0.55) 0%,
-    rgba(0, 29, 108, 0.45) 100%
+    rgba(0, 124, 187, 0.55) 0%,
+    rgba(0, 62, 94, 0.45) 100%
   );
   pointer-events: none;
 }
@@ -380,7 +395,7 @@ ul, ol {
 /* ── CTA button ───────────────────────────────────────────────────────── */
 .hero__cta {
   display: inline-block;
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-dark);
   color: var(--color-white);
   font-family: var(--font-body);
   font-size: var(--text-body);
@@ -454,7 +469,7 @@ ul, ol {
 /* ── Section: full viewport, project primary blue background with foto3 ─── */
 .about {
   position: relative;
-  background: linear-gradient(135deg, rgba(14, 43, 92, 0.78) 0%, rgba(7, 24, 54, 0.82) 100%),
+  background: linear-gradient(135deg, rgba(0, 62, 94, 0.78) 0%, rgba(0, 62, 94, 0.88) 100%),
               url('../assets/images/foto3.JPG') center/cover no-repeat;
   padding: calc(64px + 48px) 0 0; /* 64px navbar offset + 48px breathing room */
   overflow: hidden;
@@ -491,7 +506,7 @@ ul, ol {
   font-weight: var(--weight-semibold);
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--color-accent);
+  color: var(--color-white);
   margin: 0;
 }
 
@@ -545,7 +560,7 @@ ul, ol {
   font-weight: var(--weight-bold);
   font-size: 2.25rem;
   line-height: 1;
-  color: var(--color-accent);
+  color: var(--color-white);
 }
 
 /* ── Counter label ───────────────────────────────────────────────────── */
@@ -559,8 +574,9 @@ ul, ol {
 /* ── CTA button ──────────────────────────────────────────────────────── */
 .about__hero-cta {
   display: inline-block;
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   color: var(--color-white);
+  border: 2px solid var(--color-white);
   font-family: var(--font-body);
   font-size: var(--text-body);
   font-weight: var(--weight-semibold);
@@ -572,7 +588,7 @@ ul, ol {
 }
 .about__hero-cta:hover,
 .about__hero-cta:focus-visible {
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-dark);
   text-decoration: none;
 }
 
@@ -660,7 +676,7 @@ ul, ol {
   font-weight: var(--weight-semibold);
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -694,32 +710,33 @@ ul, ol {
 /* Featured Lead Card (Docencia y Formación) */
 .academic-lead-card {
   background: linear-gradient(135deg, #ffffff 0%, #f8fafd 100%);
-  border: 1px solid rgba(0, 61, 165, 0.15);
+  border: 1px solid rgba(0, 124, 187, 0.15);
   border-left: 6px solid var(--color-primary);
   border-radius: 14px;
   padding: 2.25rem 2.5rem;
   display: flex;
   align-items: center;
   gap: 2rem;
-  box-shadow: 0 8px 24px rgba(0, 61, 165, 0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 24px rgba(0, 124, 187, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
 }
 
 .academic-lead-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(0, 61, 165, 0.12);
+  transform: translateY(-4px);
+  border-left-color: var(--color-accent);
+  box-shadow: 0 12px 30px rgba(0, 62, 94, 0.12);
 }
 
 .academic-lead-card__icon-wrap {
   width: 76px;
   height: 76px;
   border-radius: 18px;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 8px 20px rgba(0, 61, 165, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 124, 187, 0.25);
 }
 
 .academic-lead-card__icon-wrap i {
@@ -747,7 +764,7 @@ ul, ol {
   letter-spacing: 0.08em;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
-  background-color: rgba(0, 61, 165, 0.08);
+  background-color: rgba(0, 124, 187, 0.08);
   color: var(--color-primary);
 }
 
@@ -802,7 +819,7 @@ ul, ol {
 .academic-sub-card {
   background-color: #ffffff;
   border: 1px solid var(--color-border);
-  border-top: 3px solid var(--color-primary-light);
+  border-top: 3px solid var(--color-primary-dark);
   border-radius: 12px;
   padding: 1.75rem;
   display: flex;
@@ -814,7 +831,7 @@ ul, ol {
 
 .academic-sub-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(0, 61, 165, 0.08);
+  box-shadow: 0 10px 24px rgba(0, 124, 187, 0.08);
   border-top-color: var(--color-accent);
 }
 
@@ -828,7 +845,7 @@ ul, ol {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background-color: rgba(0, 61, 165, 0.08);
+  background-color: rgba(0, 124, 187, 0.08);
   color: var(--color-primary);
   display: flex;
   align-items: center;
@@ -839,7 +856,7 @@ ul, ol {
 .academic-sub-card__year {
   font-size: 0.8rem;
   font-weight: var(--weight-bold);
-  color: var(--color-accent);
+  color: var(--color-primary);
   letter-spacing: 0.05em;
 }
 
@@ -960,7 +977,7 @@ ul, ol {
   align-items: center;
   gap: 0.5rem;
   margin-top: auto;
-  color: var(--color-primary-light);
+  color: var(--color-primary-dark);
   text-decoration: none;
   font-weight: var(--weight-medium);
 }
@@ -1192,7 +1209,7 @@ ul, ol {
 
 .propuestas__badge {
   display: inline-block;
-  background-color: rgba(14, 43, 92, 0.08);
+  background-color: rgba(0, 62, 94, 0.08);
   color: var(--color-primary);
   font-weight: var(--weight-bold);
   font-size: 0.85rem;
@@ -1200,7 +1217,7 @@ ul, ol {
   letter-spacing: 0.12em;
   padding: 0.4rem 1.25rem;
   border-radius: 999px;
-  border: 1px solid rgba(14, 43, 92, 0.15);
+  border: 1px solid rgba(0, 62, 94, 0.15);
 }
 
 /* ── Vertical Flow Stepper ── */
@@ -1228,7 +1245,7 @@ ul, ol {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: var(--color-white);
   font-family: var(--font-heading);
   font-weight: var(--weight-bold);
@@ -1236,7 +1253,7 @@ ul, ol {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 16px rgba(14, 43, 92, 0.22);
+  box-shadow: 0 6px 16px rgba(0, 62, 94, 0.22);
   z-index: 2;
   transition: transform 0.3s ease;
 }
@@ -1248,7 +1265,7 @@ ul, ol {
 .propuesta-step__line {
   flex: 1;
   width: 3px;
-  background: linear-gradient(to bottom, var(--color-accent), rgba(59, 130, 212, 0.2));
+  background: linear-gradient(to bottom, var(--color-accent), rgba(0, 124, 187, 0.2));
   margin-top: 0.5rem;
   border-radius: 2px;
 }
@@ -1257,16 +1274,16 @@ ul, ol {
   flex: 1;
   background-color: var(--color-bg-alt);
   border: 1px solid var(--color-border);
-  border-left: 4px solid var(--color-accent);
+  border-left: 4px solid var(--color-primary);
   border-radius: 14px;
   padding: 1.75rem 2rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(14, 43, 92, 0.04);
+  box-shadow: 0 4px 12px rgba(0, 62, 94, 0.04);
 }
 
 .propuesta-step:hover .propuesta-step__card {
   transform: translateX(6px);
-  box-shadow: 0 10px 24px rgba(14, 43, 92, 0.09);
+  box-shadow: 0 10px 24px rgba(0, 62, 94, 0.09);
   border-left-color: var(--color-primary);
 }
 
@@ -1280,8 +1297,8 @@ ul, ol {
 .propuesta-step__icon {
   width: 44px;
   height: 44px;
-  background-color: rgba(59, 130, 212, 0.12);
-  color: var(--color-accent);
+  background-color: rgba(0, 124, 187, 0.12);
+  color: var(--color-primary);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -1302,7 +1319,7 @@ ul, ol {
   font-weight: var(--weight-bold);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin-bottom: 0.2rem;
 }
 
@@ -1343,7 +1360,7 @@ ul, ol {
 }
 
 .propuesta-step__sublist li i {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-size: 0.95rem;
   margin-top: 0.2rem;
   flex-shrink: 0;
@@ -1363,8 +1380,8 @@ ul, ol {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background-color: rgba(14, 43, 92, 0.05);
-  border: 1px solid rgba(14, 43, 92, 0.08);
+  background-color: rgba(0, 62, 94, 0.05);
+  border: 1px solid rgba(0, 62, 94, 0.08);
   color: var(--color-text);
   font-size: 0.8rem;
   font-weight: var(--weight-semibold);
@@ -1374,12 +1391,12 @@ ul, ol {
 }
 
 .step-chip i {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-size: 0.75rem;
 }
 
 .propuesta-step:hover .step-chip {
-  background-color: rgba(59, 130, 212, 0.1);
+  background-color: rgba(0, 124, 187, 0.1);
 }
 
 /* ── Outcomes / Impact Section ── */
@@ -1419,24 +1436,38 @@ ul, ol {
 
 .outcome-card {
   background-color: var(--color-white);
-  border: 1px solid rgba(14, 43, 92, 0.08);
+  border: 1px solid rgba(0, 62, 94, 0.08);
+  border-top: 3px solid transparent; /* reserved so the hover accent causes no layout shift */
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: calc(1.5rem - 2px) 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease;
+}
+
+.outcome-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(0, 62, 94, 0.12);
+  border-top-color: var(--color-accent);
 }
 
 .outcome-card__icon {
   width: 40px;
   height: 40px;
-  background-color: rgba(59, 130, 212, 0.12);
-  color: var(--color-accent);
+  background-color: rgba(0, 124, 187, 0.12);
+  color: var(--color-primary);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.15rem;
   margin-bottom: 0.85rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.outcome-card:hover .outcome-card__icon {
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .outcome-card__title {
@@ -1461,7 +1492,7 @@ ul, ol {
 }
 
 .governance-card {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #153c7c 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: var(--color-white);
   border-radius: 12px;
   padding: 2rem 2.5rem;
@@ -1551,17 +1582,19 @@ ul, ol {
 .apoyo-card {
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
+  border-top: 5px solid transparent; /* reserved so the hover accent causes no layout shift */
   border-radius: 12px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 16px rgba(14, 43, 92, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transform-style: preserve-3d; /* lets the video lift toward the viewer on hover */
+  box-shadow: 0 4px 16px rgba(0, 62, 94, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease;
 }
 
 .apoyo-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(14, 43, 92, 0.12);
+  transform: perspective(1000px) translateY(-4px) rotateX(2deg);
+  box-shadow: 0 12px 28px rgba(0, 62, 94, 0.12);
+  border-top-color: var(--color-accent);
 }
 
 .apoyo-card__media {
@@ -1569,6 +1602,14 @@ ul, ol {
   aspect-ratio: 16 / 9;
   background-color: #000;
   overflow: hidden;
+  border-radius: 7px 7px 0 0; /* card radius minus its 1px side border; the card no longer clips */
+  transform-origin: top center; /* grows downward so the yellow line stays visible */
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.apoyo-card:hover .apoyo-card__media {
+  transform: translateZ(18px) scale(1.01);
+  box-shadow: 0 14px 26px rgba(0, 62, 94, 0.3);
 }
 
 .apoyo-card__media iframe {
@@ -1593,7 +1634,7 @@ ul, ol {
   font-weight: var(--weight-bold);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin-bottom: 0.4rem;
 }
 
@@ -1615,7 +1656,7 @@ ul, ol {
 
 /* ── Call to action box ── */
 .apoyo__cta-box {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #153c7c 100%);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   border-radius: 14px;
   padding: 2.25rem 2.5rem;
   display: flex;
@@ -1623,7 +1664,7 @@ ul, ol {
   justify-content: space-between;
   gap: 2rem;
   color: var(--color-white);
-  box-shadow: 0 10px 25px rgba(14, 43, 92, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 62, 94, 0.2);
 }
 
 .apoyo__cta-title {
@@ -1645,8 +1686,9 @@ ul, ol {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background-color: var(--color-accent);
+  background-color: var(--color-primary);
   color: var(--color-white);
+  border: 2px solid var(--color-white);
   padding: 0.85rem 1.75rem;
   font-family: var(--font-body);
   font-size: 0.95rem;
@@ -1659,7 +1701,7 @@ ul, ol {
 }
 
 .apoyo__cta-btn:hover {
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
@@ -1719,7 +1761,7 @@ ul, ol {
 
 .opinion-outlet-chip:hover {
   transform: translateY(-1px);
-  border-color: var(--color-primary-light);
+  border-color: var(--color-primary-dark);
 }
 
 .outlet-larepublica i { color: #dc2626; }
@@ -1770,7 +1812,7 @@ ul, ol {
   align-items: center;
   gap: 0.45rem;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 61, 165, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 124, 187, 0.08);
   transition: all 0.2s ease;
 }
 
@@ -1778,7 +1820,7 @@ ul, ol {
   background-color: var(--color-primary);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 61, 165, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 124, 187, 0.2);
 }
 
 .opinion-ctrl-btn:active {
@@ -1786,7 +1828,7 @@ ul, ol {
 }
 
 .opinion-ctrl-btn:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
@@ -1824,7 +1866,7 @@ ul, ol {
 
 .opinion-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 26px rgba(0, 61, 165, 0.12);
+  box-shadow: 0 12px 26px rgba(0, 124, 187, 0.12);
   border-top-color: var(--color-accent);
 }
 
@@ -1897,7 +1939,7 @@ ul, ol {
 }
 
 .opinion-card__title a:hover {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: underline;
 }
 
@@ -1969,7 +2011,7 @@ ul, ol {
   justify-content: center;
   font-size: 1.15rem;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(0, 61, 165, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 124, 187, 0.18);
   transition: all 0.2s ease;
 }
 
@@ -1985,11 +2027,11 @@ ul, ol {
   background-color: var(--color-primary);
   color: #ffffff;
   transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 61, 165, 0.28);
+  box-shadow: 0 6px 20px rgba(0, 124, 187, 0.28);
 }
 
 .opinion-side-btn:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
@@ -2021,7 +2063,7 @@ ul, ol {
    §5.9 Testimonios
 ──────────────────────────────────────────────────────────────────────── */
 .testimonios {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-dark);
   padding: 80px 0;
 }
 
@@ -2245,7 +2287,7 @@ ul, ol {
 
 .publication-doi {
   font-size: 0.875rem;
-  color: var(--color-primary-light);
+  color: var(--color-primary-dark);
   text-decoration: none;
 }
 
@@ -2276,7 +2318,7 @@ ul, ol {
 }
 
 .award-card:hover {
-  box-shadow: 0 8px 24px rgba(0, 61, 165, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 124, 187, 0.12);
 }
 
 .award-card__icon {
@@ -2302,7 +2344,7 @@ ul, ol {
 
 .award-card__year {
   font-weight: 600;
-  color: var(--color-accent);
+  color: var(--color-primary);
   margin: 0 0 0.25rem;
 }
 
@@ -2327,7 +2369,7 @@ ul, ol {
 /* ── Section wrapper ─────────────────────────────────────────────────── */
 .contact {
   position: relative;
-  background: linear-gradient(135deg, rgba(14, 43, 92, 0.78) 0%, rgba(7, 24, 54, 0.82) 100%),
+  background: linear-gradient(135deg, rgba(0, 62, 94, 0.78) 0%, rgba(0, 62, 94, 0.88) 100%),
               url('../assets/images/foto3.JPG') center/cover no-repeat;
   padding: 80px 0;
   color: var(--color-white);
@@ -2499,12 +2541,12 @@ ul, ol {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--color-accent);
-  color: var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-white);
   font-family: var(--font-body);
   font-size: var(--text-body);
   font-weight: var(--weight-semibold);
-  border: none;
+  border: 2px solid var(--color-white);
   border-radius: 6px;
   padding: 0.8rem 1.75rem;
   cursor: pointer;
@@ -2555,7 +2597,7 @@ ul, ol {
    Sub-Task 8 — Footer
 ═══════════════════════════════════════════════════════════════════════ */
 .footer {
-  background: #001D6C;
+  background: var(--color-footer-bg);
   color: rgba(255, 255, 255, 0.75);
   text-align: center;
   padding: 2rem 0;
