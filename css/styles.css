@@ -28,7 +28,7 @@
   --color-white:          #FFFFFF; /* Text on dark / blue backgrounds           */
 
   /* Footer */
-  --color-footer-bg:      var(--color-navy); /* Dark navy footer background     */
+  --color-footer-bg:      var(--color-primary); /* Footer background — primary blue */
 }
 
 /* ───────────────────────────────────────────────────────────────────────
@@ -315,7 +315,7 @@ ul, ol {
 /* ── Per-slide background colours ────────────────────────────────────── */
 .hero__slide--1 { background-color: var(--color-primary); }
 .hero__slide--2 { background-color: var(--color-primary-dark); }
-.hero__slide--3 { background-color: var(--color-navy); }
+.hero__slide--3 { background-color: var(--color-primary); }
 
 /* ── Slide background image (used via <img> so Swiper clones it too) ─── */
 .hero__slide-bg-img {
@@ -343,7 +343,7 @@ ul, ol {
   background: linear-gradient(
     135deg,
     rgba(0, 124, 187, 0.55) 0%,
-    rgba(0, 62, 94, 0.45) 100%
+    rgba(0, 124, 187, 0.55) 100%
   );
   pointer-events: none;
 }
@@ -469,7 +469,7 @@ ul, ol {
 /* ── Section: full viewport, project primary blue background with foto3 ─── */
 .about {
   position: relative;
-  background: linear-gradient(135deg, rgba(0, 62, 94, 0.78) 0%, rgba(0, 62, 94, 0.88) 100%),
+  background: linear-gradient(135deg, rgba(0, 124, 187, 0.78) 0%, rgba(0, 124, 187, 0.88) 100%),
               url('../assets/images/foto3.JPG') center/cover no-repeat;
   padding: calc(64px + 48px) 0 0; /* 64px navbar offset + 48px breathing room */
   overflow: hidden;
@@ -524,7 +524,7 @@ ul, ol {
 .about__hero-role {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--color-white);
   margin: 0;
 }
 
@@ -532,7 +532,7 @@ ul, ol {
 .about__hero-bio {
   font-family: var(--font-body);
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.80);
+  color: var(--color-white);
   line-height: 1.7;
   max-width: 540px;
   margin: 0;
@@ -568,7 +568,7 @@ ul, ol {
   font-family: var(--font-body);
   font-size: var(--text-caption);
   font-weight: var(--weight-medium);
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--color-white);
 }
 
 /* ── CTA button ──────────────────────────────────────────────────────── */
@@ -2063,7 +2063,7 @@ ul, ol {
    §5.9 Testimonios
 ──────────────────────────────────────────────────────────────────────── */
 .testimonios {
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-primary);
   padding: 80px 0;
 }
 
@@ -2073,7 +2073,7 @@ ul, ol {
 }
 
 .testimonios__header .section-label {
-  color: var(--color-accent);
+  color: var(--color-white);
 }
 
 .testimonios__header .section-title {
@@ -2081,7 +2081,7 @@ ul, ol {
 }
 
 .testimonios__header .section-subtitle {
-  color: rgba(255, 255, 255, 0.70);
+  color: var(--color-white);
 }
 
 /* ── 3-column grid ───────────────────────────────────────────────────── */
@@ -2157,7 +2157,7 @@ ul, ol {
 .testimonio-card__video-desc {
   font-family: var(--font-body);
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--color-white);
   line-height: 1.6;
   margin: 0;
 }
@@ -2167,11 +2167,12 @@ ul, ol {
   text-align: center;
   font-family: var(--font-body);
   font-size: var(--text-caption);
-  color: rgba(255, 255, 255, 0.50);
+  color: var(--color-white);
 }
 
 .testimonios__note-link {
-  color: var(--color-accent);
+  color: var(--color-white);
+  font-weight: var(--weight-semibold);
   text-decoration: underline;
 }
 
@@ -2369,7 +2370,7 @@ ul, ol {
 /* ── Section wrapper ─────────────────────────────────────────────────── */
 .contact {
   position: relative;
-  background: linear-gradient(135deg, rgba(0, 62, 94, 0.78) 0%, rgba(0, 62, 94, 0.88) 100%),
+  background: linear-gradient(135deg, rgba(0, 124, 187, 0.78) 0%, rgba(0, 124, 187, 0.88) 100%),
               url('../assets/images/foto3.JPG') center/cover no-repeat;
   padding: 80px 0;
   color: var(--color-white);
@@ -2377,7 +2378,7 @@ ul, ol {
 
 /* ── Section header overrides for dark background ───────────────────── */
 .contact .section-label {
-  color: var(--color-accent);
+  color: var(--color-white);
 }
 
 .contact .section-header h2,
@@ -2386,7 +2387,7 @@ ul, ol {
 }
 
 .contact .section-subtitle {
-  color: rgba(255, 255, 255, 0.80);
+  color: var(--color-white);
 }
 
 .contact__header {
@@ -2413,7 +2414,7 @@ ul, ol {
 
 .contact-info__role {
   font-size: var(--text-caption);
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--color-white);
   margin-bottom: 1.5rem;
 }
 
@@ -2429,7 +2430,7 @@ ul, ol {
   gap: 0.75rem;
   margin-bottom: 1rem;
   font-size: var(--text-body);
-  color: rgba(255, 255, 255, 0.90);
+  color: var(--color-white);
   line-height: 1.6;
 }
 
@@ -2450,7 +2451,7 @@ ul, ol {
 
 .contact-info__link:hover,
 .contact-info__link:focus-visible {
-  color: var(--color-accent);
+  color: var(--color-white);
   text-decoration: underline;
 }
 
@@ -2485,7 +2486,7 @@ ul, ol {
 
 .contact-info__note {
   font-size: var(--text-caption);
-  color: rgba(255, 255, 255, 0.70);
+  color: var(--color-white);
   font-style: italic;
   margin-top: 0.25rem;
 }
@@ -2598,7 +2599,7 @@ ul, ol {
 ═══════════════════════════════════════════════════════════════════════ */
 .footer {
   background: var(--color-footer-bg);
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--color-white);
   text-align: center;
   padding: 2rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
